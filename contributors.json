@@ -1,0 +1,47 @@
+[
+  {
+    "id": "mk",
+    "initials": "MK",
+    "color": "special",
+    "name": "Manuel Kathiresan",
+    "role": "Hand-written keyboard notes — a lifetime of musical devotion captured on paper and shared with love.",
+    "badge": "✍️ Hand-Written Notes",
+    "youtube": ""
+  },
+  {
+    "id": "kve_music_1774641752452",
+    "initials": "KV",
+    "color": "default",
+    "name": "KVE Music",
+    "role": "High-quality Tamil Christian keyboard tutorials and notation resources freely shared for the body of Christ.",
+    "badge": "🎹 Tutorial Notes",
+    "youtube": "https://www.youtube.com/@KVEMUSIC"
+  },
+  {
+    "id": "jgeneration_1774641768043",
+    "initials": "JG",
+    "color": "green",
+    "name": "JGeneration",
+    "role": "Contemporary Tamil worship keyboard notes and arrangements for the next generation of worshippers.",
+    "badge": "🎵 Worship Notes",
+    "youtube": "https://www.youtube.com/@JGenerations"
+  },
+  {
+    "id": "gospel_keybo_1774641791619",
+    "initials": "GT",
+    "color": "purple",
+    "name": "Gospel Keyboard Tutorial",
+    "role": "Tamil Christian keyboard song tutorials with step-by-step instruction for all skill levels.",
+    "badge": "🎼 Gospel Tutorials",
+    "youtube": "https://www.youtube.com/@GospelKeyboardTutorial"
+  },
+  {
+    "id": "cc",
+    "initials": "🌐",
+    "color": "teal",
+    "name": "Community Contributors",
+    "role": "Various churches, musicians, and ministries across Tamil Nadu and the global Tamil diaspora.",
+    "badge": "❤️ Community",
+    "youtube": ""
+  }
+]

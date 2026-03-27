@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Join — Tamil Christian Keyboard Notes 🎹</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1a237e;--primary-dark:#0d1257;--primary-mid:#283593;
+  --accent:#c62828;--gold:#f9a825;--green:#2e7d32;
+  --surface:#fff;--bg:#f4f5fb;--text:#1a1a2e;--muted:#607d8b;
+  --border:#dde2f5;--shadow:0 4px 24px rgba(26,35,126,.13);
+  --radius:14px;
+}
+html,body{height:100%;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
+
+/* ── LAYOUT ── */
+.page{display:flex;min-height:100vh}
+
+/* ── LEFT PANEL (value) ── */
+.panel-left{
+  flex:1;min-width:0;
+  background:linear-gradient(145deg,var(--primary-dark) 0%,var(--primary) 55%,var(--primary-mid) 100%);
+  color:#fff;padding:48px 44px;display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.panel-left::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:320px;height:320px;border-radius:50%;
+  background:rgba(255,255,255,.05);pointer-events:none;
+}
+.panel-left::after{
+  content:'';position:absolute;bottom:-100px;left:-60px;
+  width:280px;height:280px;border-radius:50%;
+  background:rgba(249,168,37,.07);pointer-events:none;
+}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:40px}
+.brand-icon{font-size:2.2rem;line-height:1}
+.brand-name{font-size:1.15rem;font-weight:800;line-height:1.3}
+.brand-sub{font-size:.78rem;font-weight:400;opacity:.7;font-family:'Noto Sans Tamil',sans-serif}
+
+.tagline{font-size:2rem;font-weight:800;line-height:1.25;margin-bottom:12px;letter-spacing:-.5px}
+.tagline span{color:var(--gold)}
+.sub-tagline{font-size:1rem;opacity:.8;line-height:1.6;margin-bottom:36px;max-width:380px}
+
+/* feature list */
+.features{display:flex;flex-direction:column;gap:16px;margin-bottom:40px}
+.feat{display:flex;align-items:flex-start;gap:14px}
+.feat-icon{
+  width:40px;height:40px;border-radius:10px;flex-shrink:0;
+  background:rgba(255,255,255,.13);display:flex;align-items:center;
+  justify-content:center;font-size:1.2rem;margin-top:1px;
+}
+.feat-text strong{display:block;font-size:.95rem;font-weight:700;margin-bottom:2px}
+.feat-text span{font-size:.82rem;opacity:.75;line-height:1.4}
+
+/* sample card preview */
+.sample-card{
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);
+  border-radius:12px;padding:16px 20px;backdrop-filter:blur(4px);
+}
+.sample-label{font-size:.72rem;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;opacity:.6;margin-bottom:10px}
+.sample-song{font-size:.9rem;font-weight:700;margin-bottom:6px}
+.sample-song-tamil{font-size:.78rem;opacity:.65;font-family:'Noto Sans Tamil',sans-serif;margin-bottom:10px}
+.sample-notes{
+  font-family:'Courier New',monospace;font-size:.82rem;
+  background:rgba(0,0,0,.25);border-radius:8px;padding:10px 14px;
+  line-height:1.8;letter-spacing:.06em;color:#e8f5e9;
+}
+.sample-tags{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.stag{
+  font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:20px;
+  background:rgba(255,255,255,.15);
+}
+.stag.gold{background:rgba(249,168,37,.25);color:var(--gold)}
+.stag.green{background:rgba(46,125,50,.4);color:#a5d6a7}
+
+/* ── RIGHT PANEL (form) ── */
+.panel-right{
+  width:440px;flex-shrink:0;background:var(--surface);
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:48px 40px;
+  box-shadow:-6px 0 32px rgba(26,35,126,.08);
+}
+.form-logo{font-size:2rem;margin-bottom:6px;text-align:center}
+.form-title{font-size:1.5rem;font-weight:800;text-align:center;color:var(--text);margin-bottom:4px}
+.form-sub{font-size:.88rem;color:var(--muted);text-align:center;margin-bottom:28px}
+
+/* tabs */
+.tabs{display:flex;background:var(--bg);border-radius:10px;padding:4px;margin-bottom:28px;width:100%}
+.tab{flex:1;text-align:center;padding:9px;border-radius:7px;font-size:.9rem;font-weight:600;
+  cursor:pointer;color:var(--muted);transition:all .2s;border:none;background:none;}
+.tab.active{background:var(--surface);color:var(--primary);
+  box-shadow:0 2px 8px rgba(26,35,126,.12);}
+
+/* form */
+.auth-form{width:100%}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:.83rem;font-weight:600;
+  color:var(--text);margin-bottom:6px;letter-spacing:.01em}
+.field input{
+  width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;
+  font-size:.95rem;font-family:'Inter',sans-serif;color:var(--text);
+  background:var(--bg);outline:none;transition:border-color .2s,box-shadow .2s;
+}
+.field input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(26,35,126,.09)}
+.field input::placeholder{color:#b0bec5}
+
+.hint{font-size:.75rem;color:var(--muted);margin-top:5px}
+
+.btn-primary{
+  width:100%;padding:13px;border:none;border-radius:10px;cursor:pointer;
+  background:linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 100%);
+  color:#fff;font-size:1rem;font-weight:700;font-family:'Inter',sans-serif;
+  letter-spacing:.01em;transition:opacity .2s,transform .1s;margin-top:4px;
+}
+.btn-primary:hover{opacity:.92;transform:translateY(-1px)}
+.btn-primary:active{transform:translateY(0)}
+.btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+.divider{display:flex;align-items:center;gap:12px;margin:18px 0}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border)}
+.divider span{font-size:.78rem;color:var(--muted);white-space:nowrap}
+
+.switch-link{text-align:center;font-size:.85rem;color:var(--muted);margin-top:18px}
+.switch-link a{color:var(--primary);font-weight:600;text-decoration:none;cursor:pointer}
+.switch-link a:hover{text-decoration:underline}
+
+/* alert */
+.alert{padding:11px 14px;border-radius:9px;font-size:.85rem;margin-bottom:16px;display:none;font-weight:500}
+.alert.error{background:#fce4e4;color:#b71c1c;border:1px solid #ef9a9a}
+.alert.success{background:#e8f5e9;color:#1b5e20;border:1px solid #a5d6a7}
+.alert.show{display:block}
+
+/* password eye toggle */
+.pw-wrap{position:relative}
+.pw-wrap input{padding-right:42px}
+.pw-eye{
+  position:absolute;right:13px;top:50%;transform:translateY(-50%);
+  background:none;border:none;cursor:pointer;color:var(--muted);
+  font-size:1.05rem;padding:0;line-height:1;
+}
+
+/* terms */
+.terms{font-size:.76rem;color:var(--muted);text-align:center;margin-top:14px;line-height:1.5}
+.terms a{color:var(--primary);text-decoration:none}
+
+/* spinner */
+.spinner{display:inline-block;width:16px;height:16px;border:2.5px solid rgba(255,255,255,.4);
+  border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:7px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* success screen */
+.success-screen{display:none;text-align:center;width:100%}
+.success-screen.show{display:block}
+.success-icon{font-size:3.5rem;margin-bottom:12px}
+.success-screen h2{font-size:1.4rem;font-weight:800;color:var(--text);margin-bottom:8px}
+.success-screen p{font-size:.9rem;color:var(--muted);margin-bottom:24px;line-height:1.6}
+
+/* responsive */
+@media(max-width:900px){
+  .panel-left{display:none}
+  .panel-right{width:100%;max-width:420px;margin:auto;box-shadow:none;padding:40px 28px}
+  .page{justify-content:center;padding:20px}
+}
+@media(max-width:480px){
+  .panel-right{padding:32px 20px}
+  .tagline{font-size:1.6rem}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ════════════ LEFT — VALUE PANEL ════════════ -->
+  <div class="panel-left">
+    <div class="brand">
+      <div class="brand-icon">🎹</div>
+      <div>
+        <div class="brand-name">Tamil Christian Keyboard Notes</div>
+        <div class="brand-sub">தமிழ் கிறிஸ்தவ கீபோர்டு குறிப்புகள்</div>
+      </div>
+    </div>
+
+    <h1 class="tagline">Play your favorite<br/><span>Tamil hymns</span> today.</h1>
+    <p class="sub-tagline">
+      Access hundreds of keyboard notes for Tamil Christian songs —
+      searchable, organized, and always at your fingertips.
+    </p>
+
+    <div class="features">
+      <div class="feat">
+        <div class="feat-icon">🎵</div>
+        <div class="feat-text">
+          <strong>800+ Song Notes</strong>
+          <span>Keyboard notes for popular Tamil Christian hymns, praise songs &amp; worship songs</span>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🔍</div>
+        <div class="feat-text">
+          <strong>Instant Search &amp; Filter</strong>
+          <span>Find songs by title, scale (C, D, G…), tempo, or song style in seconds</span>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">📄</div>
+        <div class="feat-text">
+          <strong>PDF Notes to Download</strong>
+          <span>Clean, printable PDF sheets you can take to church or practice at home</span>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">⭐</div>
+        <div class="feat-text">
+          <strong>Save Your Favourites</strong>
+          <span>Bookmark songs you love and build your personal setlist</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sample note card -->
+    <div class="sample-card">
+      <div class="sample-label">Sample — Keyboard Notes Preview</div>
+      <div class="sample-song">எபினேசரே</div>
+      <div class="sample-song-tamil">Ebinesarae — Chorus</div>
+      <div class="sample-notes">
+        C  D  F  E  F  |  C  D  F  E  F<br/>
+        C  E  D  E  D  |  C  C  E  E  D<br/>
+        C  D  F  E  F  |  C  D  F  E  F<br/>
+        C  E  D  E  D  |  C  C  E  E  D
+      </div>
+      <div class="sample-tags">
+        <span class="stag gold">Scale: D Minor</span>
+        <span class="stag green">3/4 Waltz</span>
+        <span class="stag">Tempo: 67</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════ RIGHT — AUTH PANEL ════════════ -->
+  <div class="panel-right">
+    <div class="form-logo">🎹</div>
+    <div class="form-title">Welcome</div>
+    <div class="form-sub" id="formSubText">Create your free account to access all notes</div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" id="tabSignup" onclick="switchTab('signup')">Sign Up</button>
+      <button class="tab" id="tabLogin" onclick="switchTab('login')">Log In</button>
+    </div>
+
+    <!-- Alert -->
+    <div class="alert" id="alertBox"></div>
+
+    <!-- ── SIGN UP FORM ── -->
+    <form class="auth-form" id="signupForm" onsubmit="handleSignup(event)">
+      <div class="field">
+        <label for="su_name">Full Name</label>
+        <input type="text" id="su_name" placeholder="e.g. David Samuel" autocomplete="name" required/>
+      </div>
+      <div class="field">
+        <label for="su_email">Email Address</label>
+        <input type="email" id="su_email" placeholder="you@example.com" autocomplete="email" required/>
+      </div>
+      <div class="field">
+        <label for="su_password">Password</label>
+        <div class="pw-wrap">
+          <input type="password" id="su_password" placeholder="Min. 6 characters" autocomplete="new-password" required minlength="6"/>
+          <button type="button" class="pw-eye" onclick="togglePw('su_password',this)" title="Show password">👁</button>
+        </div>
+        <div class="hint">At least 6 characters</div>
+      </div>
+      <button type="submit" class="btn-primary" id="signupBtn">Create Free Account</button>
+      <div class="terms">By signing up you agree to use this app for personal, non-commercial use.</div>
+    </form>
+
+    <!-- ── LOGIN FORM ── -->
+    <form class="auth-form" id="loginForm" style="display:none" onsubmit="handleLogin(event)">
+      <div class="field">
+        <label for="li_email">Email Address</label>
+        <input type="email" id="li_email" placeholder="you@example.com" autocomplete="email" required/>
+      </div>
+      <div class="field">
+        <label for="li_password">Password</label>
+        <div class="pw-wrap">
+          <input type="password" id="li_password" placeholder="Your password" autocomplete="current-password" required/>
+          <button type="button" class="pw-eye" onclick="togglePw('li_password',this)" title="Show password">👁</button>
+        </div>
+      </div>
+      <button type="submit" class="btn-primary" id="loginBtn">Log In</button>
+    </form>
+
+    <!-- ── SUCCESS SCREEN ── -->
+    <div class="success-screen" id="successScreen">
+      <div class="success-icon">🎉</div>
+      <h2>You're all set!</h2>
+      <p>Your account has been created.<br/>Taking you to the notes now…</p>
+      <button class="btn-primary" onclick="goToApp()">Open Keyboard Notes →</button>
+    </div>
+
+    <div class="switch-link" id="switchLink">
+      Don't have an account? <a onclick="switchTab('signup')">Sign up free</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── Tab switching ──────────────────────────────────────────────
+function switchTab(tab) {
+  const isSignup = tab === 'signup';
+  document.getElementById('signupForm').style.display = isSignup ? '' : 'none';
+  document.getElementById('loginForm').style.display  = isSignup ? 'none' : '';
+  document.getElementById('tabSignup').classList.toggle('active', isSignup);
+  document.getElementById('tabLogin').classList.toggle('active', !isSignup);
+  document.getElementById('formSubText').textContent = isSignup
+    ? 'Create your free account to access all notes'
+    : 'Welcome back! Log in to your account';
+  document.getElementById('switchLink').innerHTML = isSignup
+    ? 'Already have an account? <a onclick="switchTab(\'login\')">Log in</a>'
+    : 'Don\'t have an account? <a onclick="switchTab(\'signup\')">Sign up free</a>';
+  hideAlert();
+}
+
+// ── Password visibility toggle ─────────────────────────────────
+function togglePw(id, btn) {
+  const inp = document.getElementById(id);
+  const show = inp.type === 'password';
+  inp.type = show ? 'text' : 'password';
+  btn.textContent = show ? '🙈' : '👁';
+}
+
+// ── Alert helpers ──────────────────────────────────────────────
+function showAlert(msg, type='error') {
+  const el = document.getElementById('alertBox');
+  el.textContent = msg;
+  el.className = 'alert ' + type + ' show';
+}
+function hideAlert() {
+  document.getElementById('alertBox').className = 'alert';
+}
+
+// ── Loading state ──────────────────────────────────────────────
+function setLoading(btn, loading, defaultText) {
+  if (loading) {
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span>Please wait…';
+  } else {
+    btn.disabled = false;
+    btn.textContent = defaultText;
+  }
+}
+
+// ── Navigate to app ────────────────────────────────────────────
+function goToApp() {
+  window.location.href = '/';
+}
+
+// ── Check if already logged in ─────────────────────────────────
+async function checkSession() {
+  try {
+    const r = await fetch('/api/user/check');
+    if (r.ok) {
+      const d = await r.json();
+      if (d.loggedIn) goToApp();
+    }
+  } catch(_) {}
+}
+checkSession();
+
+// ── Sign Up ────────────────────────────────────────────────────
+async function handleSignup(e) {
+  e.preventDefault();
+  hideAlert();
+  const name     = document.getElementById('su_name').value.trim();
+  const email    = document.getElementById('su_email').value.trim().toLowerCase();
+  const password = document.getElementById('su_password').value;
+  const btn      = document.getElementById('signupBtn');
+
+  if (password.length < 6) {
+    return showAlert('Password must be at least 6 characters.');
+  }
+
+  setLoading(btn, true, 'Create Free Account');
+  try {
+    const r = await fetch('/api/user/signup', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ name, email, password })
+    });
+    const data = await r.json();
+    if (r.ok && data.success) {
+      document.getElementById('signupForm').style.display = 'none';
+      document.getElementById('successScreen').classList.add('show');
+      document.getElementById('switchLink').style.display = 'none';
+      document.querySelector('.tabs').style.display = 'none';
+      document.getElementById('formSubText').textContent = 'Welcome to Tamil Christian Keyboard Notes!';
+      setTimeout(goToApp, 2800);
+    } else {
+      showAlert(data.error || 'Signup failed. Please try again.');
+    }
+  } catch(_) {
+    showAlert('Network error. Please check your connection.');
+  } finally {
+    setLoading(btn, false, 'Create Free Account');
+  }
+}
+
+// ── Log In ─────────────────────────────────────────────────────
+async function handleLogin(e) {
+  e.preventDefault();
+  hideAlert();
+  const email    = document.getElementById('li_email').value.trim().toLowerCase();
+  const password = document.getElementById('li_password').value;
+  const btn      = document.getElementById('loginBtn');
+
+  setLoading(btn, true, 'Log In');
+  try {
+    const r = await fetch('/api/user/login', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ email, password })
+    });
+    const data = await r.json();
+    if (r.ok && data.success) {
+      showAlert('✅ Logged in! Taking you to the notes…', 'success');
+      setTimeout(goToApp, 1200);
+    } else {
+      showAlert(data.error || 'Login failed. Please check your email and password.');
+    }
+  } catch(_) {
+    showAlert('Network error. Please check your connection.');
+  } finally {
+    setLoading(btn, false, 'Log In');
+  }
+}
+</script>
+</body>
+</html>

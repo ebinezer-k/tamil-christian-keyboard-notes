@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Environment secrets — NEVER commit this
+.env
+
+# Logs
+*.log
+server-error.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Planning / internal-only files (not needed on server)
+Tamil_Christian_Keyboard_Notes_Catalogue*.xlsx
+Tamil_Christian_Keyboard_Notes_Project_Plan.html
+Missing_Songs_Review.html
+Scrape_Sources.html
+Song_Update_Plan.html
+Key Board Song book1.pptx
+add_approved_songs.py
+approved_songs.json
+kve_publish.py
+kve_review.html
+kve_sync.py
+Start_Server.bat
+
+# Sensitive user data — NEVER commit
+users.json
+messages.json
+
+# Backup (regenerated on publish)
+songs-data.backup.json
+
+# PDF source files (archived locally, not needed on server)
+PDF_Archive/

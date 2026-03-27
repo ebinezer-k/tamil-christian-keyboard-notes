@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Admin — Tamil Christian Keyboard Notes</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1a237e;--primary-dark:#0d1257;--primary-light:#e8eaf6;
+  --accent:#c62828;--gold:#f9a825;--green:#2e7d32;--green-light:#e8f5e9;
+  --red:#c62828;--red-light:#ffebee;--orange:#e65100;--orange-light:#fff3e0;
+  --surface:#fff;--bg:#f4f5fb;--text:#1a1a2e;--muted:#607d8b;
+  --border:#dde2f5;--shadow:0 2px 12px rgba(26,35,126,.10);--radius:10px;
+}
+/* ── DARK MODE ── */
+[data-theme="dark"]{
+  --primary:#7986cb;--primary-dark:#3949ab;--primary-light:#1a237e;
+  --accent:#ef5350;--gold:#ffd54f;--green:#66bb6a;--green-light:#1b3a1f;
+  --red:#ef5350;--red-light:#3e1515;--orange:#ffb74d;--orange-light:#3e2800;
+  --surface:#1e1e2e;--bg:#12121e;--text:#e8eaf6;--muted:#90a4ae;
+  --border:#2d2d4e;--shadow:0 2px 12px rgba(0,0,0,.45);
+}
+[data-theme="dark"] body{background:var(--bg);color:var(--text)}
+[data-theme="dark"] .site-header{background:linear-gradient(135deg,#080818 0%,#1a1a3e 55%,#232356 100%)}
+[data-theme="dark"] .login-card{background:var(--surface)}
+[data-theme="dark"] .login-card h2{color:#7986cb}
+[data-theme="dark"] .input-wrap input{background:#2a2a3e;border-color:var(--border);color:var(--text)}
+[data-theme="dark"] .input-wrap input:focus{border-color:var(--primary)}
+[data-theme="dark"] .login-error{background:#3e1515;color:#ef9a9a}
+[data-theme="dark"] .stat-card{background:var(--surface)}
+[data-theme="dark"] .stat-card .stat-val{color:#7986cb}
+[data-theme="dark"] .stat-card.warn .stat-val{color:var(--orange)}
+[data-theme="dark"] .stat-card.good .stat-val{color:var(--green)}
+[data-theme="dark"] .toolbar{background:var(--surface)}
+[data-theme="dark"] .search-wrap input{background:#2a2a3e;border-color:var(--border);color:var(--text)}
+[data-theme="dark"] .search-wrap input:focus{border-color:var(--primary)}
+[data-theme="dark"] select.filter-sel{background:#2a2a3e;border-color:var(--border);color:var(--text)}
+[data-theme="dark"] .table-wrap{background:var(--surface)}
+[data-theme="dark"] .table-header{border-color:var(--border)}
+[data-theme="dark"] thead th{background:#1a237e;color:#c5cae9}
+[data-theme="dark"] thead th:hover{background:#283593}
+[data-theme="dark"] tbody tr{border-color:var(--border)}
+[data-theme="dark"] tbody tr:hover{background:#1e1e3a}
+[data-theme="dark"] tbody tr.modified{background:#2a2a00}
+[data-theme="dark"] tbody tr.new-song{background:#1a2e1a}
+[data-theme="dark"] .pagination{border-color:var(--border)}
+[data-theme="dark"] .page-btn{background:#2a2a3e;border-color:var(--border);color:var(--text)}
+[data-theme="dark"] .page-btn:hover{border-color:var(--primary);color:var(--primary)}
+[data-theme="dark"] .page-btn.active{background:var(--primary);color:#fff}
+[data-theme="dark"] .modal{background:var(--surface)}
+[data-theme="dark"] .modal-head{border-color:var(--border)}
+[data-theme="dark"] .modal-foot{border-color:var(--border)}
+[data-theme="dark"] .field input,.field select,[data-theme="dark"] .field textarea{background:#2a2a3e;border-color:var(--border);color:var(--text)}
+[data-theme="dark"] .field input:focus,[data-theme="dark"] .field select:focus,[data-theme="dark"] .field textarea:focus{border-color:var(--primary)}
+[data-theme="dark"] .upload-zone{border-color:var(--border)}
+[data-theme="dark"] .upload-zone:hover,[data-theme="dark"] .upload-zone.drag-over{border-color:var(--primary);background:#1a237e22}
+[data-theme="dark"] .file-item{background:#2a2a3e;border-color:var(--border)}
+[data-theme="dark"] .fi-pdf{background:#3e1515;color:#ef9a9a}
+[data-theme="dark"] .pub-summary{background:#1b3a1f;border-color:#2e7d32}
+[data-theme="dark"] .pub-summary .ps-row{border-color:#2e5432}
+[data-theme="dark"] .pub-summary .ps-val{color:var(--green)}
+[data-theme="dark"] .btn-ghost{background:transparent;color:var(--muted);border-color:var(--border)}
+[data-theme="dark"] .btn-ghost:hover{background:var(--primary-light);color:#c5cae9;border-color:var(--primary)}
+[data-theme="dark"] .dark-toggle{background:rgba(255,255,255,.12);color:#fff}
+[data-theme="dark"] .dark-toggle:hover{background:rgba(255,255,255,.22)}
+[data-theme="dark"] .loading-overlay{background:rgba(0,0,0,.6)}
+/* dark mode tag overrides */
+[data-theme="dark"] .tag.cat-tw{background:#0d2137;color:#90caf9}
+[data-theme="dark"] .tag.cat-tc{background:#1b3a1f;color:#a5d6a7}
+[data-theme="dark"] .tag.cat-en{background:#2d1b4e;color:#ce93d8}
+[data-theme="dark"] .tag.cat-ch{background:#3e2800;color:#ffb74d}
+[data-theme="dark"] .tag.ts-44{background:#3e2800;color:#ffb74d}
+[data-theme="dark"] .tag.ts-34{background:#003833;color:#80cbc4}
+[data-theme="dark"] .tag.ts-68{background:#1b3a1f;color:#a5d6a7}
+[data-theme="dark"] .tag.ts-24{background:#3e0000;color:#ef9a9a}
+[data-theme="dark"] .tag.ts-xx{background:#2a2a2a;color:#757575}
+[data-theme="dark"] .tag.scale{background:#2d1b4e;color:#ce93d8}
+[data-theme="dark"] .tag.tempo{background:#0d2137;color:#90caf9}
+[data-theme="dark"] .tag.diff-b{background:#1b3a1f;color:#a5d6a7}
+[data-theme="dark"] .tag.diff-i{background:#3e2800;color:#ffb74d}
+[data-theme="dark"] .tag.diff-bi{background:#3e0020;color:#f48fb1}
+[data-theme="dark"] .tag.missing{background:#2a2a2a;color:#555}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* ── FONTS ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ── HEADER ── */
+.site-header{background:linear-gradient(135deg,var(--primary-dark),var(--primary) 60%,#283593);color:#fff;padding:0 24px;position:sticky;top:0;z-index:200;box-shadow:0 2px 16px rgba(0,0,0,.25)}
+.header-inner{max-width:1300px;margin:0 auto;display:flex;align-items:center;gap:14px;height:60px}
+.logo{font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.admin-badge{background:var(--gold);color:#333;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase}
+.header-actions{margin-left:auto;display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;border:none;font-size:.875rem;font-weight:600;cursor:pointer;transition:all .15s;text-decoration:none;white-space:nowrap}
+.btn-primary{background:var(--gold);color:#1a1a2e}
+.btn-primary:hover{background:#f0a000;transform:translateY(-1px)}
+.btn-danger{background:var(--red);color:#fff}
+.btn-danger:hover{background:#b71c1c}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.btn-outline:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.7)}
+.btn-sm{padding:6px 12px;font-size:.8rem}
+.btn-ghost{background:transparent;color:var(--muted);border:1.5px solid var(--border)}
+.btn-ghost:hover{background:var(--primary-light);color:var(--primary);border-color:var(--primary)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:#1b5e20}
+.btn-icon{width:34px;height:34px;padding:0;justify-content:center;border-radius:8px}
+
+/* ── LOGIN SCREEN ── */
+#loginScreen{display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 60px);padding:20px}
+.login-card{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);padding:40px;width:100%;max-width:380px;text-align:center}
+.login-card .piano-icon{font-size:3rem;margin-bottom:16px}
+.login-card h2{font-size:1.4rem;font-weight:800;margin-bottom:6px;color:var(--primary)}
+.login-card p{color:var(--muted);font-size:.9rem;margin-bottom:28px}
+.input-wrap{position:relative;margin-bottom:16px}
+.input-wrap input{width:100%;padding:12px 16px 12px 44px;border:1.5px solid var(--border);border-radius:8px;font-size:.95rem;outline:none;transition:border .15s;font-family:inherit}
+.input-wrap input:focus{border-color:var(--primary)}
+.input-wrap .input-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:1.1rem;opacity:.5}
+.login-error{background:var(--red-light);color:var(--red);border-radius:8px;padding:10px 14px;font-size:.85rem;margin-bottom:14px;display:none}
+
+/* ── MAIN LAYOUT ── */
+#adminApp{display:none}
+.app-layout{max-width:1300px;margin:0 auto;padding:24px 20px}
+
+/* ── STATS BAR ── */
+.stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:24px}
+.stat-card{background:var(--surface);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+.stat-card .stat-val{font-size:1.8rem;font-weight:800;color:var(--primary);line-height:1}
+.stat-card .stat-lbl{font-size:.78rem;color:var(--muted);margin-top:4px;font-weight:500}
+.stat-card.warn .stat-val{color:var(--orange)}
+.stat-card.good .stat-val{color:var(--green)}
+
+/* ── TOOLBAR ── */
+.toolbar{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;margin-bottom:20px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.search-wrap{position:relative;flex:1;min-width:220px}
+.search-wrap input{width:100%;padding:9px 14px 9px 38px;border:1.5px solid var(--border);border-radius:8px;font-size:.9rem;outline:none;font-family:inherit;transition:border .15s}
+.search-wrap input:focus{border-color:var(--primary)}
+.search-wrap .s-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);opacity:.45;font-size:1rem}
+select.filter-sel{padding:9px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:.875rem;outline:none;background:var(--surface);font-family:inherit;color:var(--text);cursor:pointer}
+select.filter-sel:focus{border-color:var(--primary)}
+.pending-badge{background:var(--orange);color:#fff;border-radius:20px;padding:3px 10px;font-size:.75rem;font-weight:700;display:none}
+
+/* ── SONG TABLE ── */
+.table-wrap{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.table-header{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.table-header h3{font-size:1rem;font-weight:700}
+.result-count{font-size:.82rem;color:var(--muted)}
+table{width:100%;border-collapse:collapse}
+thead th{background:var(--primary-light);padding:10px 14px;text-align:left;font-size:.78rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;cursor:pointer;user-select:none}
+thead th:hover{background:#d5d9f5}
+thead th .sort-icon{margin-left:4px;opacity:.4;font-size:.7rem}
+thead th.sorted .sort-icon{opacity:1}
+tbody tr{border-bottom:1px solid var(--border);transition:background .12s}
+tbody tr:hover{background:#f7f8fd}
+tbody tr.modified{background:#fffde7}
+tbody tr.new-song{background:#e8f5e9}
+td{padding:10px 14px;font-size:.875rem;vertical-align:middle}
+td.td-title{font-weight:600;color:var(--text);max-width:220px}
+td.td-title .song-id{font-size:.72rem;color:var(--muted);font-weight:400;display:block}
+.tag{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.72rem;font-weight:600;white-space:nowrap}
+.tag.cat-tw{background:#e3f2fd;color:#1565c0}
+.tag.cat-en{background:#f3e5f5;color:#6a1b9a}
+.tag.cat-tc{background:#e8f5e9;color:#2e7d32}
+.tag.cat-ch{background:#fff3e0;color:#e65100}
+.tag.ts-44{background:#fff8e1;color:#f57f17}
+.tag.ts-34{background:#e0f7fa;color:#00695c}
+.tag.ts-68{background:#e8f5e9;color:#2e7d32}
+.tag.ts-24{background:#fce4ec;color:#880e4f}
+.tag.ts-xx{background:#f5f5f5;color:#9e9e9e}
+.tag.scale{background:#ede7f6;color:#4527a0}
+.tag.tempo{background:#e3f2fd;color:#0d47a1}
+.tag.diff-b{background:#e8f5e9;color:#2e7d32}
+.tag.diff-i{background:#fff3e0;color:#e65100}
+.tag.diff-bi{background:#fce4ec;color:#880e4f}
+.tag.missing{background:#ffebee;color:#c62828;font-style:italic}
+.actions-cell{white-space:nowrap;display:flex;gap:6px;align-items:center}
+.edit-btn{background:var(--primary-light);color:var(--primary);border:none;padding:5px 12px;border-radius:6px;font-size:.78rem;font-weight:600;cursor:pointer;transition:background .12s}
+.edit-btn:hover{background:#c5cae9}
+.del-btn{background:var(--red-light);color:var(--red);border:none;padding:5px 10px;border-radius:6px;font-size:.78rem;font-weight:600;cursor:pointer;transition:background .12s}
+.del-btn:hover{background:#ffcdd2}
+.no-results{padding:48px 20px;text-align:center;color:var(--muted)}
+.no-results .nr-icon{font-size:2.5rem;margin-bottom:12px}
+
+/* ── PAGINATION ── */
+.pagination{padding:14px 20px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.page-info{font-size:.82rem;color:var(--muted)}
+.page-btns{display:flex;gap:6px}
+.page-btn{border:1.5px solid var(--border);background:var(--surface);color:var(--text);width:32px;height:32px;border-radius:6px;font-size:.8rem;cursor:pointer;font-weight:600;transition:all .12s;display:flex;align-items:center;justify-content:center}
+.page-btn:hover{border-color:var(--primary);color:var(--primary)}
+.page-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.page-btn:disabled{opacity:.35;cursor:not-allowed}
+
+/* ── MODAL OVERLAY ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(10,10,30,.55);z-index:500;display:flex;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .2s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--surface);border-radius:16px;width:100%;max-width:720px;box-shadow:0 8px 40px rgba(0,0,0,.3);margin:auto;transform:translateY(20px);transition:transform .2s}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal-head{padding:22px 24px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.modal-head h2{font-size:1.15rem;font-weight:800;color:var(--primary)}
+.modal-close{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted);line-height:1;padding:4px 8px;border-radius:6px}
+.modal-close:hover{background:var(--bg);color:var(--text)}
+.modal-body{padding:24px}
+.modal-foot{padding:16px 24px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:10px}
+
+/* ── FORM FIELDS ── */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-grid.full{grid-template-columns:1fr}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.8rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.field input,.field select,.field textarea{padding:10px 13px;border:1.5px solid var(--border);border-radius:8px;font-size:.9rem;font-family:inherit;color:var(--text);outline:none;transition:border .15s;background:var(--surface)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--primary)}
+.field textarea{resize:vertical;min-height:80px}
+.field .field-hint{font-size:.75rem;color:var(--muted)}
+.section-sep{grid-column:1/-1;border:none;border-top:1px solid var(--border);margin:4px 0}
+.section-label{grid-column:1/-1;font-size:.8rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* ── FILE UPLOAD ZONE ── */
+.upload-zone{grid-column:1/-1;border:2px dashed var(--border);border-radius:10px;padding:28px;text-align:center;cursor:pointer;transition:all .2s;position:relative}
+.upload-zone:hover,.upload-zone.drag-over{border-color:var(--primary);background:var(--primary-light)}
+.upload-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer}
+.upload-zone .uz-icon{font-size:2rem;margin-bottom:8px}
+.upload-zone p{font-size:.88rem;color:var(--muted)}
+.upload-zone strong{color:var(--primary)}
+.file-list{grid-column:1/-1;display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.file-item{display:flex;align-items:center;gap:10px;background:var(--bg);border-radius:8px;padding:8px 12px;border:1px solid var(--border)}
+.file-item .fi-thumb{width:36px;height:36px;object-fit:cover;border-radius:4px;border:1px solid var(--border);flex-shrink:0}
+.file-item .fi-pdf{width:36px;height:36px;background:#ffebee;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--red);font-weight:700;flex-shrink:0}
+.file-item .fi-info{flex:1;min-width:0}
+.file-item .fi-name{font-size:.85rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.file-item .fi-path{font-size:.72rem;color:var(--muted)}
+.file-item .fi-primary{font-size:.7rem;background:var(--green);color:#fff;border-radius:10px;padding:2px 8px;font-weight:600}
+.file-item .fi-set-primary{font-size:.7rem;background:var(--primary-light);color:var(--primary);border:none;border-radius:10px;padding:2px 8px;cursor:pointer;font-weight:600}
+.file-item .fi-set-primary:hover{background:#c5cae9}
+.file-item .fi-remove{background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;padding:2px 6px;border-radius:4px}
+.file-item .fi-remove:hover{background:var(--red-light);color:var(--red)}
+.file-item .fi-reorder{display:flex;flex-direction:column;gap:1px;margin-left:auto}
+.file-item .fi-reorder button{background:none;border:1px solid var(--border);border-radius:3px;cursor:pointer;font-size:.7rem;line-height:1;padding:2px 5px;color:var(--muted)}
+.file-item .fi-reorder button:hover:not(:disabled){background:var(--primary-light);color:var(--primary);border-color:var(--primary)}
+.file-item .fi-reorder button:disabled{opacity:.3;cursor:default}
+.fi-view-btn{background:none;border:1px solid var(--primary);border-radius:6px;color:var(--primary);cursor:pointer;font-size:.75rem;padding:3px 8px;font-weight:600;white-space:nowrap}
+.fi-view-btn:hover{background:var(--primary);color:#fff}
+/* Notes Preview Lightbox */
+#notesPreviewOverlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+#notesPreviewOverlay.open{display:flex}
+#notesPreviewOverlay img{max-width:90vw;max-height:85vh;border-radius:8px;object-fit:contain;box-shadow:0 8px 40px rgba(0,0,0,.6)}
+#notesPreviewClose{position:absolute;top:16px;right:20px;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:1.5rem;border-radius:50%;width:40px;height:40px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+#notesPreviewClose:hover{background:rgba(255,255,255,.3)}
+#notesPreviewLabel{color:#fff;font-size:.85rem;opacity:.7}
+.upload-progress{width:100%;height:4px;background:var(--border);border-radius:2px;overflow:hidden;display:none}
+.upload-progress .up-bar{height:100%;background:var(--primary);transition:width .3s;width:0}
+
+/* ── DELETE CONFIRM MODAL ── */
+.confirm-modal{max-width:420px}
+.confirm-modal .modal-body{text-align:center;padding:32px 24px}
+.confirm-modal .ci-icon{font-size:2.5rem;margin-bottom:12px}
+.confirm-modal h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.confirm-modal p{color:var(--muted);font-size:.9rem}
+
+/* ── PUBLISH MODAL ── */
+.publish-modal{max-width:480px}
+.pub-summary{background:var(--green-light);border:1px solid #a5d6a7;border-radius:8px;padding:16px 20px;margin-bottom:18px}
+.pub-summary .ps-row{display:flex;justify-content:space-between;padding:4px 0;font-size:.9rem;border-bottom:1px solid #c8e6c9}
+.pub-summary .ps-row:last-child{border-bottom:none}
+.pub-summary .ps-val{font-weight:700;color:var(--green)}
+
+/* ── TOAST ── */
+#toast{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.toast-item{background:#323232;color:#fff;padding:12px 20px;border-radius:10px;font-size:.875rem;font-weight:500;box-shadow:0 4px 20px rgba(0,0,0,.3);transform:translateX(120%);transition:transform .3s;pointer-events:all;display:flex;align-items:center;gap:10px;max-width:320px}
+.toast-item.show{transform:translateX(0)}
+.toast-item.success{border-left:4px solid #66bb6a}
+.toast-item.error{border-left:4px solid #ef5350}
+.toast-item.info{border-left:4px solid #42a5f5}
+
+/* ── LOADING OVERLAY ── */
+.loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.7);z-index:9000;display:none;align-items:center;justify-content:center}
+.loading-overlay.show{display:flex}
+.spinner{width:48px;height:48px;border:5px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  .form-grid{grid-template-columns:1fr}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .toolbar{flex-direction:column;align-items:stretch}
+  table thead{display:none}
+  tbody tr{display:grid;grid-template-columns:1fr auto;padding:10px 14px;gap:4px}
+  td{padding:2px 0;border:none}
+  td::before{font-size:.72rem;color:var(--muted);font-weight:600;text-transform:uppercase;display:block}
+  td.td-title::before{content:"Song"}
+  td.td-cat::before{content:"Category"}
+  td.td-scale::before{content:"Scale"}
+  td.td-style::before{content:"Time Sig"}
+  td.td-tempo::before{content:"Tempo"}
+  td.td-diff::before{content:"Difficulty"}
+  td.actions-cell{grid-row:1;grid-column:2;flex-direction:column;align-items:flex-end;justify-content:center}
+}
+
+/* ══════════════════════════════════════
+   ADMIN TAB NAV
+══════════════════════════════════════ */
+.admin-tabs{
+  display:flex;gap:4px;padding:16px 0 0;margin-bottom:-1px;
+}
+.admin-tab{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:10px 22px;border:none;border-radius:10px 10px 0 0;
+  font-size:.9rem;font-weight:700;cursor:pointer;
+  background:rgba(26,35,126,.07);color:var(--muted);
+  transition:all .18s;border-bottom:3px solid transparent;
+  font-family:inherit;
+}
+.admin-tab:hover{background:rgba(26,35,126,.13);color:var(--text)}
+.admin-tab.active{
+  background:var(--surface);color:var(--primary);
+  border-bottom-color:var(--primary);
+  box-shadow:0 -2px 12px rgba(26,35,126,.08);
+}
+.admin-tab .tab-badge{
+  font-size:.7rem;font-weight:800;padding:2px 7px;border-radius:20px;
+  background:var(--primary);color:#fff;line-height:1.4;
+}
+.admin-tab.active .tab-badge{background:var(--primary)}
+[data-theme="dark"] .admin-tab{background:rgba(121,134,203,.08);color:var(--muted)}
+[data-theme="dark"] .admin-tab:hover{background:rgba(121,134,203,.18)}
+[data-theme="dark"] .admin-tab.active{background:var(--surface);color:#7986cb;border-bottom-color:#7986cb}
+
+/* ══════════════════════════════════════
+   USER MANAGEMENT
+══════════════════════════════════════ */
+.user-stats-bar{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px;
+}
+.user-stat{
+  background:var(--surface);border-radius:var(--radius);
+  padding:16px 18px;box-shadow:var(--shadow);
+}
+.user-stat .us-val{font-size:1.8rem;font-weight:800;color:var(--primary);line-height:1}
+.user-stat .us-lbl{font-size:.78rem;color:var(--muted);margin-top:4px;font-weight:500}
+.user-stat.good .us-val{color:var(--green)}
+.user-stat.warn .us-val{color:var(--orange)}
+.user-stat.danger .us-val{color:var(--red)}
+[data-theme="dark"] .user-stat{background:var(--surface)}
+[data-theme="dark"] .user-stat .us-val{color:#7986cb}
+[data-theme="dark"] .user-stat.good .us-val{color:var(--green)}
+[data-theme="dark"] .user-stat.danger .us-val{color:var(--red)}
+
+.user-toolbar{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px;
+}
+.user-search-wrap{
+  position:relative;flex:1;min-width:200px;
+}
+.user-search-wrap input{
+  width:100%;padding:9px 12px 9px 36px;
+  border:1.5px solid var(--border);border-radius:8px;
+  font-size:.875rem;background:var(--bg);color:var(--text);
+  font-family:inherit;outline:none;transition:border-color .2s;
+}
+.user-search-wrap input:focus{border-color:var(--primary)}
+.user-search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:.9rem}
+.user-filter{
+  padding:9px 12px;border:1.5px solid var(--border);border-radius:8px;
+  font-size:.875rem;background:var(--bg);color:var(--text);font-family:inherit;outline:none;
+}
+[data-theme="dark"] .user-search-wrap input,[data-theme="dark"] .user-filter{
+  background:#2a2a3e;border-color:var(--border);color:var(--text);
+}
+
+.user-table-wrap{
+  background:var(--surface);border-radius:var(--radius);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+[data-theme="dark"] .user-table-wrap{background:var(--surface)}
+.user-table-header{
+  padding:14px 20px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.user-table-header h3{font-size:1rem;font-weight:700}
+[data-theme="dark"] .user-table-header{border-color:var(--border)}
+
+.user-table{width:100%;border-collapse:collapse}
+.user-table thead th{
+  background:var(--primary);color:#fff;padding:10px 14px;
+  font-size:.78rem;font-weight:700;text-align:left;letter-spacing:.03em;
+  text-transform:uppercase;white-space:nowrap;
+}
+[data-theme="dark"] .user-table thead th{background:#1a237e;color:#c5cae9}
+.user-table tbody tr{
+  border-bottom:1px solid var(--border);transition:background .15s;
+}
+.user-table tbody tr:last-child{border-bottom:none}
+.user-table tbody tr:hover{background:var(--primary-light)}
+[data-theme="dark"] .user-table tbody tr:hover{background:#1e1e3a}
+[data-theme="dark"] .user-table tbody tr{border-color:var(--border)}
+.user-table td{padding:12px 14px;font-size:.875rem;vertical-align:middle}
+
+.u-avatar{
+  width:34px;height:34px;border-radius:50%;background:var(--primary);
+  color:#fff;display:inline-flex;align-items:center;justify-content:center;
+  font-size:.85rem;font-weight:700;flex-shrink:0;
+}
+.u-name-cell{display:flex;align-items:center;gap:10px}
+.u-name{font-weight:600;font-size:.9rem}
+.u-email{font-size:.78rem;color:var(--muted)}
+
+/* Status badges */
+.status-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:4px 10px;border-radius:20px;font-size:.75rem;font-weight:700;
+}
+.status-badge.active{background:#e8f5e9;color:#1b5e20}
+.status-badge.suspended{background:#ffebee;color:#b71c1c}
+.status-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0}
+[data-theme="dark"] .status-badge.active{background:#1b3a1f;color:#a5d6a7}
+[data-theme="dark"] .status-badge.suspended{background:#3e1515;color:#ef9a9a}
+
+.user-actions{display:flex;gap:6px;flex-wrap:wrap}
+.btn-toggle-active{background:#e8f5e9;color:#1b5e20;border:1px solid #a5d6a7}
+.btn-toggle-active:hover{background:#c8e6c9}
+.btn-toggle-suspend{background:#ffebee;color:#b71c1c;border:1px solid #ef9a9a}
+.btn-toggle-suspend:hover{background:#ffcdd2}
+[data-theme="dark"] .btn-toggle-active{background:#1b3a1f;color:#a5d6a7;border-color:#2e5432}
+[data-theme="dark"] .btn-toggle-active:hover{background:#2a5432}
+[data-theme="dark"] .btn-toggle-suspend{background:#3e1515;color:#ef9a9a;border-color:#5e2020}
+[data-theme="dark"] .btn-toggle-suspend:hover{background:#5e1515}
+
+.no-users{text-align:center;padding:48px 20px;color:var(--muted)}
+.no-users-icon{font-size:2.5rem;margin-bottom:10px}
+
+/* ── MESSAGES ── */
+.msg-list{display:flex;flex-direction:column;gap:12px;padding:0 0 24px}
+.msg-card{background:var(--surface);border-radius:12px;border:1.5px solid var(--border);padding:16px 20px;display:flex;flex-direction:column;gap:8px;transition:box-shadow .2s}
+.msg-card:hover{box-shadow:0 4px 16px rgba(26,35,126,.1)}
+.msg-card.unread{border-left:4px solid var(--primary)}
+.msg-card-header{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.msg-sender{font-weight:700;font-size:.95rem;color:var(--text)}
+.msg-email{font-size:.82rem;color:var(--muted)}
+.msg-date{font-size:.78rem;color:var(--muted);margin-left:auto}
+.msg-unread-dot{width:8px;height:8px;background:var(--primary);border-radius:50%;flex-shrink:0}
+.msg-body{font-size:.9rem;color:var(--text);line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.msg-actions{display:flex;gap:8px;margin-top:4px}
+.btn-msg-read{padding:5px 13px;font-size:.78rem;border:1.5px solid var(--primary);background:transparent;color:var(--primary);border-radius:6px;cursor:pointer;font-family:inherit;font-weight:600}
+.btn-msg-read:hover{background:var(--primary);color:#fff}
+.btn-msg-del{padding:5px 13px;font-size:.78rem;border:1.5px solid #c62828;background:transparent;color:#c62828;border-radius:6px;cursor:pointer;font-family:inherit;font-weight:600}
+.btn-msg-del:hover{background:#c62828;color:#fff}
+[data-theme="dark"] .msg-card{background:#1e1e2e}
+[data-theme="dark"] .btn-msg-read:hover{background:#5c6bc0;border-color:#5c6bc0}
+.msg-attachment{display:flex;flex-direction:column;gap:6px;margin:4px 0}
+.msg-attachment img{max-width:260px;max-height:180px;border-radius:8px;border:1px solid var(--border);object-fit:contain;cursor:zoom-in}
+.msg-att-link{display:inline-flex;align-items:center;gap:5px;font-size:.82rem;color:var(--primary);font-weight:600;text-decoration:none;border:1px solid var(--primary);border-radius:6px;padding:3px 10px;width:fit-content}
+.msg-att-link:hover{background:var(--primary);color:#fff}
+
+/* Delete confirm modal specifics */
+#deleteUserModal .modal{max-width:420px}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">🎹 <span>Keyboard Notes</span> <span class="admin-badge">Admin</span></div>
+    <div class="header-actions" id="headerActions">
+      <a href="index.html" target="_blank" class="btn btn-outline btn-sm">🌐 View Site</a>
+      <button class="btn btn-outline btn-sm dark-toggle" id="darkToggle" onclick="toggleTheme()" title="Toggle dark mode">☀️</button>
+      <button class="btn btn-outline btn-sm" onclick="logout()">🚪 Logout</button>
+    </div>
+  </div>
+</header>
+
+<!-- ── LOGIN SCREEN ── -->
+<div id="loginScreen">
+  <div class="login-card">
+    <div class="piano-icon">🎹</div>
+    <h2>Admin Login</h2>
+    <p>Tamil Christian Keyboard Notes</p>
+    <div class="login-error" id="loginError"></div>
+    <form onsubmit="doLogin(event)">
+      <div class="input-wrap">
+        <span class="input-icon">🔑</span>
+        <input type="password" id="pwInput" placeholder="Enter admin password" autocomplete="current-password"/>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:12px">
+        Enter Admin Panel →
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- ── ADMIN APP ── -->
+<div id="adminApp">
+  <div class="app-layout">
+
+    <!-- ── Tab Navigation ── -->
+    <div class="admin-tabs">
+      <button class="admin-tab active" id="tabSongs" onclick="switchAdminTab('songs')">
+        🎵 Songs <span class="tab-badge" id="tabSongCount">–</span>
+      </button>
+      <button class="admin-tab" id="tabUsers" onclick="switchAdminTab('users')">
+        👥 Users <span class="tab-badge" id="tabUserCount">–</span>
+      </button>
+      <button class="admin-tab" id="tabMessages" onclick="switchAdminTab('messages')">
+        📬 Messages <span class="tab-badge" id="tabMsgCount" style="display:none">0</span>
+      </button>
+      <button class="admin-tab" id="tabContributors" onclick="switchAdminTab('contributors')">
+        🙏 Contributors <span class="tab-badge" id="tabContribCount">–</span>
+      </button>
+    </div>
+
+    <!-- ══════ SONGS SECTION ══════ -->
+    <div id="songsSection">
+
+    <!-- Stats Bar -->
+    <div class="stats-bar" id="statsBar">
+      <div class="stat-card"><div class="stat-val" id="statTotal">–</div><div class="stat-lbl">Total Songs</div></div>
+      <div class="stat-card" id="statCatCard"></div>
+      <div class="stat-card warn"><div class="stat-val" id="statIncomplete">–</div><div class="stat-lbl">Incomplete Metadata</div></div>
+      <div class="stat-card"><div class="stat-val" id="statPending" style="color:var(--orange)">0</div><div class="stat-lbl">Unpublished Changes</div></div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="search-wrap">
+        <span class="s-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search songs by title…" oninput="filterSongs()"/>
+      </div>
+      <select class="filter-sel" id="filterCat" onchange="filterSongs()">
+        <option value="">All Categories</option>
+        <option>Tamil Worship</option>
+        <option>Tamil Christian</option>
+        <option>English</option>
+        <option>Christmas</option>
+      </select>
+      <select class="filter-sel" id="filterStyle" onchange="filterSongs()">
+        <option value="">All Time Sig</option>
+        <option>4/4</option><option>3/4</option><option>6/8</option>
+        <option>2/4</option><option>4/8</option><option>6/4</option>
+      </select>
+      <select class="filter-sel" id="filterComplete" onchange="filterSongs()">
+        <option value="">All Songs</option>
+        <option value="incomplete">Incomplete Only</option>
+        <option value="complete">Complete Only</option>
+      </select>
+      <button class="btn btn-primary" onclick="openAddModal()">➕ Add Song</button>
+      <button class="btn btn-green" id="publishBtn" onclick="openPublishModal()">
+        🚀 Publish <span class="pending-badge" id="pendingCount">0</span>
+      </button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrap">
+      <div class="table-header">
+        <h3>Song Library</h3>
+        <span class="result-count" id="resultCount"></span>
+      </div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr>
+              <th onclick="sortBy('title')">Title <span class="sort-icon">▲</span></th>
+              <th onclick="sortBy('category')">Category <span class="sort-icon">▲</span></th>
+              <th onclick="sortBy('scale')">Scale <span class="sort-icon">▲</span></th>
+              <th onclick="sortBy('style')">Time Sig <span class="sort-icon">▲</span></th>
+              <th onclick="sortBy('tempo')">Tempo <span class="sort-icon">▲</span></th>
+              <th onclick="sortBy('difficulty')">Difficulty <span class="sort-icon">▲</span></th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="songTableBody"></tbody>
+        </table>
+      </div>
+      <div class="no-results" id="noResults" style="display:none">
+        <div class="nr-icon">🎵</div>
+        <p>No songs match your search.</p>
+      </div>
+      <div class="pagination" id="pagination">
+        <span class="page-info" id="pageInfo"></span>
+        <div class="page-btns" id="pageBtns"></div>
+      </div>
+    </div>
+
+    </div><!-- /songsSection -->
+
+    <!-- ══════ USERS SECTION ══════ -->
+    <div id="usersSection" style="display:none">
+
+      <!-- User Stats -->
+      <div class="user-stats-bar">
+        <div class="user-stat"><div class="us-val" id="ustatTotal">–</div><div class="us-lbl">Total Members</div></div>
+        <div class="user-stat good"><div class="us-val" id="ustatActive">–</div><div class="us-lbl">Active</div></div>
+        <div class="user-stat danger"><div class="us-val" id="ustatSuspended">–</div><div class="us-lbl">Suspended</div></div>
+        <div class="user-stat"><div class="us-val" id="ustatToday">–</div><div class="us-lbl">Joined Today</div></div>
+      </div>
+
+      <!-- User Toolbar -->
+      <div class="user-toolbar">
+        <div class="user-search-wrap">
+          <span class="user-search-icon">🔍</span>
+          <input type="text" id="userSearchInput" placeholder="Search by name or email…" oninput="filterUsers()"/>
+        </div>
+        <select class="user-filter" id="userStatusFilter" onchange="filterUsers()">
+          <option value="">All Users</option>
+          <option value="active">Active Only</option>
+          <option value="suspended">Suspended Only</option>
+        </select>
+        <button class="btn btn-outline btn-sm" onclick="loadUsers()" title="Refresh">🔄 Refresh</button>
+      </div>
+
+      <!-- User Table -->
+      <div class="user-table-wrap">
+        <div class="user-table-header">
+          <h3>Registered Members</h3>
+          <span class="result-count" id="userResultCount"></span>
+        </div>
+        <div style="overflow-x:auto">
+          <table class="user-table">
+            <thead>
+              <tr>
+                <th>Member</th>
+                <th>Email</th>
+                <th>Joined</th>
+                <th>Last Login</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="userTableBody"></tbody>
+          </table>
+        </div>
+        <div class="no-users" id="noUsers" style="display:none">
+          <div class="no-users-icon">👤</div>
+          <p>No users found.</p>
+        </div>
+      </div>
+    </div><!-- /usersSection -->
+
+    <!-- ══════ MESSAGES SECTION ══════ -->
+    <div id="messagesSection" style="display:none">
+      <div class="user-stats-bar" id="msgStatsBar">
+        <div class="user-stat"><span class="user-stat-num" id="msgTotal">0</span><span class="user-stat-lbl">Total</span></div>
+        <div class="user-stat"><span class="user-stat-num" id="msgUnread">0</span><span class="user-stat-lbl">Unread</span></div>
+      </div>
+
+      <div id="msgList" class="msg-list"></div>
+      <div id="noMessages" style="display:none;text-align:center;padding:60px 20px;color:var(--muted)">
+        <div style="font-size:3rem;margin-bottom:12px">📭</div>
+        <p>No messages yet.</p>
+      </div>
+    </div><!-- /messagesSection -->
+
+    <!-- ══════ CONTRIBUTORS SECTION ══════ -->
+    <div id="contributorsSection" style="display:none">
+
+      <div class="user-table-wrap" style="margin-bottom:20px">
+        <div class="user-table-header" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+          <div>
+            <h3>🙏 Notes Contributors</h3>
+            <p style="font-size:.82rem;color:var(--muted);margin-top:2px">Manage the contributor cards shown at the bottom of the public site.</p>
+          </div>
+          <button class="btn btn-primary" onclick="openContribModal()">➕ Add Contributor</button>
+        </div>
+
+        <div id="contribGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;padding:20px"></div>
+        <div id="noContribs" style="display:none;text-align:center;padding:60px 20px;color:var(--muted)">
+          <div style="font-size:3rem;margin-bottom:12px">🙏</div>
+          <p>No contributors yet. Add one above.</p>
+        </div>
+      </div>
+
+    </div><!-- /contributorsSection -->
+
+    <!-- CONTRIBUTOR MODAL -->
+    <div class="modal-overlay" id="contribModal" onclick="if(event.target===this)closeContribModal()">
+      <div class="modal" style="max-width:480px">
+        <div class="modal-head">
+          <h3 id="contribModalTitle">Add Contributor</h3>
+          <button class="btn btn-ghost btn-icon" onclick="closeContribModal()">✕</button>
+        </div>
+        <div class="modal-body" style="padding:20px;display:flex;flex-direction:column;gap:14px">
+          <input type="hidden" id="contribEditId"/>
+          <div class="field">
+            <label class="field-label">Initials / Icon</label>
+            <input class="field-input" type="text" id="contribInitials" maxlength="3" placeholder="e.g. KV or 🌐"/>
+            <span style="font-size:.75rem;color:var(--muted)">2–3 letters or an emoji shown in the avatar circle</span>
+          </div>
+          <div class="field">
+            <label class="field-label">Avatar Colour</label>
+            <select class="field-input" id="contribColor">
+              <option value="special">Red (special)</option>
+              <option value="gold">Gold</option>
+              <option value="green">Green</option>
+              <option value="teal">Teal</option>
+              <option value="purple">Purple</option>
+              <option value="default">Default Blue</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label">Name *</label>
+            <input class="field-input" type="text" id="contribName" placeholder="e.g. KVE Music"/>
+          </div>
+          <div class="field">
+            <label class="field-label">Role / Description *</label>
+            <textarea class="field-input" id="contribRole" rows="3" placeholder="Short description of their contribution…" style="resize:vertical"></textarea>
+          </div>
+          <div class="field">
+            <label class="field-label">Badge Label</label>
+            <input class="field-input" type="text" id="contribBadge" placeholder="e.g. 🎹 Tutorial Notes"/>
+          </div>
+          <div class="field">
+            <label class="field-label">YouTube Link</label>
+            <input class="field-input" type="url" id="contribYoutube" placeholder="https://www.youtube.com/..."/>
+          </div>
+        </div>
+        <div class="modal-foot" style="display:flex;gap:10px;justify-content:flex-end;padding:14px 20px;border-top:1px solid var(--border)">
+          <button class="btn btn-ghost" onclick="closeContribModal()">Cancel</button>
+          <button class="btn btn-primary" onclick="saveContributor()">💾 Save</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /app-layout -->
+</div><!-- /adminApp -->
+
+<!-- ══════════════════════════════════════════
+     DELETE USER CONFIRM MODAL
+══════════════════════════════════════════ -->
+<div class="modal-overlay" id="deleteUserModal">
+  <div class="modal" style="max-width:420px">
+    <div class="modal-head">
+      <h2>Delete User</h2>
+      <button class="modal-close" onclick="closeModal('deleteUserModal')">✕</button>
+    </div>
+    <div style="padding:24px 28px">
+      <p style="margin-bottom:12px">Are you sure you want to permanently delete this user account?</p>
+      <p style="font-weight:700;font-size:1rem" id="deleteUserName"></p>
+      <p style="color:var(--muted);font-size:.85rem" id="deleteUserEmail"></p>
+      <p style="margin-top:14px;font-size:.85rem;color:var(--red)">⚠️ This cannot be undone.</p>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-outline" onclick="closeModal('deleteUserModal')">Cancel</button>
+      <button class="btn btn-danger" id="confirmDeleteUserBtn" onclick="confirmDeleteUser()">🗑 Delete User</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     NOTES PREVIEW LIGHTBOX
+═══════════════════════════════════════════ -->
+<div id="notesPreviewOverlay" onclick="if(event.target===this)closeNotesPreview()">
+  <button type="button" id="notesPreviewClose" onclick="closeNotesPreview()">✕</button>
+  <img id="notesPreviewImg" src="" alt="Notes preview"/>
+  <span id="notesPreviewLabel"></span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     ADD / EDIT SONG MODAL
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="songModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="modalTitle">Add New Song</h2>
+      <button class="modal-close" onclick="closeModal('songModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="songForm">
+        <input type="hidden" id="editId"/>
+        <div class="form-grid">
+
+          <!-- Title -->
+          <div class="field" style="grid-column:1/-1">
+            <label>Song Title *</label>
+            <input type="text" id="fTitle" placeholder="e.g. Aadhi thiru vaarthai" required/>
+          </div>
+
+          <!-- Category -->
+          <div class="field">
+            <label>Category *</label>
+            <select id="fCategory">
+              <option value="">— Select —</option>
+              <option>Tamil Worship</option>
+              <option>Tamil Christian</option>
+              <option>English</option>
+              <option>Christmas</option>
+            </select>
+          </div>
+
+          <!-- Difficulty -->
+          <div class="field">
+            <label>Difficulty</label>
+            <select id="fDifficulty">
+              <option value="">— Select —</option>
+              <option>Beginner</option>
+              <option>Beginner-Intermediate</option>
+              <option>Intermediate</option>
+            </select>
+          </div>
+
+          <hr class="section-sep"/>
+          <div class="section-label">🎵 Musical Details</div>
+
+          <!-- Scale -->
+          <div class="field">
+            <label>Scale / Key</label>
+            <input type="text" id="fScale" list="scaleOptions" placeholder="e.g. C Major, D Minor"/>
+            <datalist id="scaleOptions">
+              <option>C</option><option>C Major</option><option>C Minor</option>
+              <option>D</option><option>D Major</option><option>D Minor</option>
+              <option>E</option><option>E Major</option><option>E Minor</option>
+              <option>F</option><option>F Major</option><option>F Minor</option>
+              <option>G</option><option>G Major</option><option>G Minor</option>
+              <option>A</option><option>A Major</option><option>A Minor</option>
+              <option>B</option><option>B Major</option><option>B Minor</option>
+              <option>Bb Major</option><option>Eb Major</option><option>Ab Major</option>
+            </datalist>
+          </div>
+
+          <!-- Time Signature -->
+          <div class="field">
+            <label>Time Signature</label>
+            <select id="fStyle">
+              <option value="">— Select —</option>
+              <option>4/4</option><option>3/4</option><option>6/8</option>
+              <option>2/4</option><option>4/8</option><option>6/4</option>
+            </select>
+          </div>
+
+          <!-- Tempo -->
+          <div class="field">
+            <label>Tempo</label>
+            <select id="fTempo">
+              <option value="">— Select —</option>
+              <option>Slow</option><option>Slow-Medium</option>
+              <option>Medium</option><option>Moderate</option>
+              <option>Fast</option><option>Very Fast</option>
+            </select>
+          </div>
+
+          <!-- Lyrics URL -->
+          <div class="field">
+            <label>Lyrics URL</label>
+            <input type="url" id="fLyricsUrl" placeholder="https://tamilchristiansongs.in/…"/>
+          </div>
+
+          <hr class="section-sep"/>
+          <div class="section-label">📄 Notes Files</div>
+
+          <!-- File Upload Zone -->
+          <div class="upload-zone" id="uploadZone" ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDrop(event)">
+            <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png" multiple onchange="handleFiles(this.files)"/>
+            <div class="uz-icon">📁</div>
+            <p><strong>Click to browse</strong> or drag &amp; drop files here</p>
+            <p style="margin-top:4px;font-size:.78rem">PDF, JPG, PNG — up to 20 MB each</p>
+          </div>
+          <div class="upload-progress" id="uploadProgress">
+            <div class="up-bar" id="uploadBar"></div>
+          </div>
+
+          <!-- File List -->
+          <div class="file-list" id="fileList"></div>
+
+        </div><!-- /form-grid -->
+      </form>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" onclick="closeModal('songModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveSong()">💾 Save Song</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     DELETE CONFIRM MODAL
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal confirm-modal">
+    <div class="modal-head">
+      <h2>Confirm Delete</h2>
+      <button class="modal-close" onclick="closeModal('deleteModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="ci-icon">🗑️</div>
+      <h3 id="deleteTitle">Delete this song?</h3>
+      <p id="deleteSubtitle" style="margin-top:6px"></p>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" onclick="closeModal('deleteModal')">Cancel</button>
+      <button class="btn btn-danger" onclick="confirmDelete()">Yes, Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PUBLISH MODAL
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="publishModal">
+  <div class="modal publish-modal">
+    <div class="modal-head">
+      <h2>🚀 Publish Changes</h2>
+      <button class="modal-close" onclick="closeModal('publishModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="margin-bottom:16px;color:var(--muted);font-size:.9rem">
+        This will overwrite <strong>songs-data.json</strong> with your current changes.
+        A backup will be saved as <code>songs-data.backup.json</code> automatically.
+      </p>
+      <div class="pub-summary" id="pubSummary"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" onclick="closeModal('publishModal')">Cancel</button>
+      <button class="btn btn-green" onclick="doPublish()">✅ Confirm &amp; Publish</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast container -->
+<div id="toast"></div>
+
+<!-- Loading overlay -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════════════════════════ -->
+<script>
+// ── State ──────────────────────────────────────────────────────────────────
+let allSongs       = [];
+let filteredSongs  = [];
+let currentPage    = 1;
+const PAGE_SIZE    = 50;
+let sortField      = 'title';
+let sortAsc        = true;
+let pendingChanges = 0;
+let deleteTargetId = null;
+
+// Tracks files attached to the current edit session
+// Array of { path, fileType, isNew }
+let currentFiles   = [];
+let primaryFile    = '';
+
+// ── Init ───────────────────────────────────────────────────────────────────
+(async () => {
+  const r = await fetch('/api/auth/status').catch(() => ({ ok: false }));
+  const data = r.ok ? await r.json() : { authenticated: false };
+  if (data.authenticated) showApp();
+})();
+
+// ── AUTH ───────────────────────────────────────────────────────────────────
+async function doLogin(e) {
+  e.preventDefault();
+  const pw  = document.getElementById('pwInput').value;
+  const err = document.getElementById('loginError');
+  err.style.display = 'none';
+  try {
+    const r = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pw })
+    });
+    if (r.ok) {
+      showApp();
+    } else {
+      err.textContent = 'Incorrect password. Please try again.';
+      err.style.display = 'block';
+    }
+  } catch {
+    err.textContent = 'Cannot connect to server. Is it running?';
+    err.style.display = 'block';
+  }
+}
+
+async function logout() {
+  await fetch('/api/logout', { method: 'POST' });
+  document.getElementById('adminApp').style.display  = 'none';
+  document.getElementById('loginScreen').style.display = 'flex';
+  document.getElementById('pwInput').value = '';
+}
+
+function showApp() {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('adminApp').style.display    = 'block';
+  loadSongs();
+}
+
+// ── LOAD DATA ──────────────────────────────────────────────────────────────
+async function loadSongs() {
+  showLoading(true);
+  try {
+    const [songsRes, statsRes] = await Promise.all([
+      fetch('/api/songs'),
+      fetch('/api/stats')
+    ]);
+    const { songs } = await songsRes.json();
+    const stats     = await statsRes.json();
+    allSongs = songs;
+    renderStats(stats);
+    filterSongs();
+  } catch (e) {
+    toast('Failed to load songs: ' + e.message, 'error');
+  } finally {
+    showLoading(false);
+  }
+}
+
+function renderStats(stats) {
+  document.getElementById('statTotal').textContent = stats.total;
+  document.getElementById('statIncomplete').textContent = stats.incomplete;
+  // Largest category
+  const cats = Object.entries(stats.byCategory).sort((a,b) => b[1]-a[1]);
+  const card  = document.getElementById('statCatCard');
+  if (cats.length) {
+    card.innerHTML = `<div class="stat-val" style="font-size:1.4rem">${cats[0][1]}</div><div class="stat-lbl">${cats[0][0]}</div>`;
+  }
+}
+
+// ── FILTER / SORT / PAGINATE ────────────────────────────────────────────────
+function filterSongs() {
+  const q        = document.getElementById('searchInput').value.toLowerCase().trim();
+  const cat      = document.getElementById('filterCat').value;
+  const style    = document.getElementById('filterStyle').value;
+  const complete = document.getElementById('filterComplete').value;
+
+  filteredSongs = allSongs.filter(s => {
+    if (q && !s.title.toLowerCase().includes(q)) return false;
+    if (cat && s.category !== cat) return false;
+    if (style && s.style !== style) return false;
+    if (complete === 'incomplete') {
+      if (s.scale && s.style && s.tempo && s.difficulty) return false;
+    }
+    if (complete === 'complete') {
+      if (!s.scale || !s.style || !s.tempo || !s.difficulty) return false;
+    }
+    return true;
+  });
+
+  // Sort
+  filteredSongs.sort((a, b) => {
+    const av = (a[sortField] || '').toLowerCase();
+    const bv = (b[sortField] || '').toLowerCase();
+    return sortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
+  });
+
+  currentPage = 1;
+  renderTable();
+  document.getElementById('resultCount').textContent =
+    `${filteredSongs.length} of ${allSongs.length} songs`;
+}
+
+function sortBy(field) {
+  if (sortField === field) sortAsc = !sortAsc;
+  else { sortField = field; sortAsc = true; }
+  // Update header icons
+  document.querySelectorAll('thead th').forEach(th => th.classList.remove('sorted'));
+  filterSongs();
+}
+
+// ── RENDER TABLE ───────────────────────────────────────────────────────────
+function renderTable() {
+  const tbody   = document.getElementById('songTableBody');
+  const start   = (currentPage - 1) * PAGE_SIZE;
+  const page    = filteredSongs.slice(start, start + PAGE_SIZE);
+  const noRes   = document.getElementById('noResults');
+
+  if (page.length === 0) {
+    tbody.innerHTML = '';
+    noRes.style.display = 'block';
+    document.getElementById('pagination').style.display = 'none';
+    return;
+  }
+  noRes.style.display = 'none';
+  document.getElementById('pagination').style.display = 'flex';
+
+  tbody.innerHTML = page.map(s => `
+    <tr id="row-${s.id}">
+      <td class="td-title">
+        ${escHtml(s.title)}
+        <span class="song-id">${s.id}</span>
+      </td>
+      <td class="td-cat">${catTag(s.category)}</td>
+      <td class="td-scale">
+        ${s.scale
+          ? `<span class="tag scale">${escHtml(s.scale)}</span>`
+          : `<span class="tag missing">—</span>`}
+      </td>
+      <td class="td-style">${styleTag(s.style)}</td>
+      <td class="td-tempo">
+        ${s.tempo
+          ? `<span class="tag tempo">${escHtml(s.tempo)}</span>`
+          : `<span class="tag missing">—</span>`}
+      </td>
+      <td class="td-diff">${diffTag(s.difficulty)}</td>
+      <td>
+        <div class="actions-cell">
+          <button class="edit-btn" onclick="openEditModal('${s.id}')">✏️ Edit</button>
+          <button class="del-btn"  onclick="openDeleteModal('${s.id}')">🗑️</button>
+        </div>
+      </td>
+    </tr>
+  `).join('');
+
+  renderPagination();
+}
+
+function catTag(cat) {
+  const map = {
+    'Tamil Worship':   'cat-tw',
+    'Tamil Christian': 'cat-tc',
+    'English':         'cat-en',
+    'Christmas':       'cat-ch'
+  };
+  if (!cat) return '<span class="tag missing">—</span>';
+  return `<span class="tag ${map[cat] || ''}">${escHtml(cat)}</span>`;
+}
+
+function styleTag(style) {
+  const map = { '4/4':'ts-44', '3/4':'ts-34', '6/8':'ts-68', '2/4':'ts-24' };
+  if (!style) return '<span class="tag ts-xx">—</span>';
+  return `<span class="tag ${map[style] || 'ts-xx'}">${escHtml(style)}</span>`;
+}
+
+function diffTag(diff) {
+  const map = { 'Beginner':'diff-b','Intermediate':'diff-i','Beginner-Intermediate':'diff-bi' };
+  if (!diff) return '<span class="tag missing">—</span>';
+  return `<span class="tag ${map[diff] || ''}">${escHtml(diff)}</span>`;
+}
+
+function renderPagination() {
+  const total = Math.ceil(filteredSongs.length / PAGE_SIZE);
+  const start = (currentPage - 1) * PAGE_SIZE + 1;
+  const end   = Math.min(currentPage * PAGE_SIZE, filteredSongs.length);
+  document.getElementById('pageInfo').textContent =
+    `Showing ${start}–${end} of ${filteredSongs.length}`;
+
+  const btns = document.getElementById('pageBtns');
+  let html = `<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>‹</button>`;
+
+  let pages = [];
+  if (total <= 7) {
+    pages = Array.from({length:total}, (_,i) => i+1);
+  } else {
+    pages = [1];
+    if (currentPage > 3) pages.push('…');
+    for (let i = Math.max(2, currentPage-1); i <= Math.min(total-1, currentPage+1); i++) pages.push(i);
+    if (currentPage < total - 2) pages.push('…');
+    pages.push(total);
+  }
+
+  pages.forEach(p => {
+    if (p === '…') html += `<span class="page-btn" style="cursor:default">…</span>`;
+    else html += `<button class="page-btn ${p===currentPage?'active':''}" onclick="goPage(${p})">${p}</button>`;
+  });
+  html += `<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===total?'disabled':''}>›</button>`;
+  btns.innerHTML = html;
+}
+
+function goPage(p) {
+  const total = Math.ceil(filteredSongs.length / PAGE_SIZE);
+  if (p < 1 || p > total) return;
+  currentPage = p;
+  renderTable();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── ADD MODAL ──────────────────────────────────────────────────────────────
+function openAddModal() {
+  document.getElementById('modalTitle').textContent = 'Add New Song';
+  document.getElementById('editId').value = '';
+  resetForm();
+  openModal('songModal');
+}
+
+// ── EDIT MODAL ─────────────────────────────────────────────────────────────
+async function openEditModal(id) {
+  document.getElementById('modalTitle').textContent = 'Edit Song';
+  document.getElementById('editId').value = id;
+  resetForm();
+
+  showLoading(true);
+  try {
+    const r = await fetch(`/api/songs/${id}`);
+    if (!r.ok) throw new Error('Song not found');
+    const s = await r.json();
+
+    document.getElementById('fTitle').value      = s.title       || '';
+    document.getElementById('fCategory').value   = s.category    || '';
+    document.getElementById('fDifficulty').value = s.difficulty  || '';
+    document.getElementById('fScale').value      = s.scale       || '';
+    document.getElementById('fStyle').value      = s.style       || '';
+    document.getElementById('fTempo').value      = s.tempo       || '';
+    document.getElementById('fLyricsUrl').value  = s.lyricsUrl   || '';
+
+    // Populate existing file list
+    primaryFile  = s.primaryFile || '';
+    currentFiles = (s.allFiles || []).map(f => ({ path: f, fileType: s.fileType, isNew: false }));
+    renderFileList();
+    openModal('songModal');
+  } catch (e) {
+    toast('Could not load song: ' + e.message, 'error');
+  } finally {
+    showLoading(false);
+  }
+}
+
+// ── SAVE SONG ──────────────────────────────────────────────────────────────
+async function saveSong() {
+  const id    = document.getElementById('editId').value;
+  const title = document.getElementById('fTitle').value.trim();
+  if (!title) { toast('Title is required', 'error'); return; }
+
+  const allFilePaths  = currentFiles.map(f => f.path);
+  const detectedType  = currentFiles.some(f => f.path.endsWith('.pdf')) ? 'pdf' : 'image';
+
+  const body = {
+    title,
+    category:    document.getElementById('fCategory').value,
+    difficulty:  document.getElementById('fDifficulty').value,
+    scale:       document.getElementById('fScale').value.trim(),
+    style:       document.getElementById('fStyle').value,
+    tempo:       document.getElementById('fTempo').value,
+    lyricsUrl:   document.getElementById('fLyricsUrl').value.trim(),
+    primaryFile: primaryFile || allFilePaths[0] || '',
+    allFiles:    allFilePaths,
+    fileType:    detectedType,
+    pages:       allFilePaths.length || 1
+  };
+
+  showLoading(true);
+  try {
+    const url    = id ? `/api/songs/${id}` : '/api/songs';
+    const method = id ? 'PUT' : 'POST';
+    const r = await fetch(url, {
+      method,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    if (!r.ok) {
+      const err = await r.json();
+      throw new Error(err.error || 'Save failed');
+    }
+    const result = await r.json();
+    toast(`✅ "${title}" ${id ? 'updated' : 'added'} successfully`, 'success');
+    closeModal('songModal');
+    pendingChanges++;
+    updatePendingBadge();
+
+    // Update local list without full reload
+    if (id) {
+      const idx = allSongs.findIndex(s => s.id === id);
+      if (idx !== -1) allSongs[idx] = result.song;
+    } else {
+      allSongs.push(result.song);
+      allSongs.sort((a,b) => a.title.localeCompare(b.title));
+    }
+    filterSongs();
+
+    // Flash the row
+    setTimeout(() => {
+      const row = document.getElementById(`row-${result.song.id}`);
+      if (row) {
+        row.classList.add(id ? 'modified' : 'new-song');
+        setTimeout(() => row.classList.remove('modified', 'new-song'), 3000);
+      }
+    }, 100);
+  } catch (e) {
+    toast('Error: ' + e.message, 'error');
+  } finally {
+    showLoading(false);
+  }
+}
+
+// ── DELETE ─────────────────────────────────────────────────────────────────
+function openDeleteModal(id) {
+  const song = allSongs.find(s => s.id === id);
+  if (!song) return;
+  deleteTargetId = id;
+  document.getElementById('deleteTitle').textContent   = `Delete "${song.title}"?`;
+  document.getElementById('deleteSubtitle').textContent =
+    'This removes the song from the library. Note files on disk are NOT deleted.';
+  openModal('deleteModal');
+}
+
+async function confirmDelete() {
+  if (!deleteTargetId) return;
+  showLoading(true);
+  try {
+    const r = await fetch(`/api/songs/${deleteTargetId}`, { method: 'DELETE' });
+    if (!r.ok) throw new Error('Delete failed');
+    const { removed } = await r.json();
+    toast(`🗑️ "${removed.title}" deleted`, 'info');
+    allSongs = allSongs.filter(s => s.id !== deleteTargetId);
+    pendingChanges++;
+    updatePendingBadge();
+    filterSongs();
+    closeModal('deleteModal');
+  } catch (e) {
+    toast('Delete failed: ' + e.message, 'error');
+  } finally {
+    showLoading(false);
+    deleteTargetId = null;
+  }
+}
+
+// ── PUBLISH ────────────────────────────────────────────────────────────────
+function openPublishModal() {
+  const summary = document.getElementById('pubSummary');
+  summary.innerHTML = `
+    <div class="ps-row"><span>Total songs to publish</span><span class="ps-val">${allSongs.length}</span></div>
+    <div class="ps-row"><span>Unpublished changes</span><span class="ps-val">${pendingChanges}</span></div>
+    <div class="ps-row"><span>Backup file</span><span class="ps-val">songs-data.backup.json</span></div>
+  `;
+  openModal('publishModal');
+}
+
+async function doPublish() {
+  closeModal('publishModal');
+  showLoading(true);
+  try {
+    const r = await fetch('/api/publish', { method: 'POST' });
+    if (!r.ok) throw new Error('Publish failed');
+    const { message, count } = await r.json();
+    toast(`🚀 ${message}`, 'success');
+    pendingChanges = 0;
+    updatePendingBadge();
+    document.getElementById('statTotal').textContent = count;
+  } catch (e) {
+    toast('Publish error: ' + e.message, 'error');
+  } finally {
+    showLoading(false);
+  }
+}
+
+function updatePendingBadge() {
+  const badge = document.getElementById('pendingCount');
+  const el    = document.getElementById('statPending');
+  badge.textContent     = pendingChanges;
+  el.textContent        = pendingChanges;
+  badge.style.display   = pendingChanges > 0 ? 'inline-block' : 'none';
+}
+
+// ── FILE UPLOAD ────────────────────────────────────────────────────────────
+function onDragOver(e) {
+  e.preventDefault();
+  document.getElementById('uploadZone').classList.add('drag-over');
+}
+function onDragLeave(e) {
+  document.getElementById('uploadZone').classList.remove('drag-over');
+}
+function onDrop(e) {
+  e.preventDefault();
+  document.getElementById('uploadZone').classList.remove('drag-over');
+  handleFiles(e.dataTransfer.files);
+}
+
+async function handleFiles(files) {
+  if (!files || files.length === 0) return;
+  const formData = new FormData();
+  for (const f of files) formData.append('files', f);
+
+  // Show progress bar
+  const prog = document.getElementById('uploadProgress');
+  const bar  = document.getElementById('uploadBar');
+  prog.style.display = 'block';
+  bar.style.width    = '30%';
+
+  try {
+    const r = await fetch('/api/upload', { method: 'POST', body: formData });
+    bar.style.width = '80%';
+    if (!r.ok) {
+      const err = await r.json();
+      throw new Error(err.error || 'Upload failed');
+    }
+    const { files: uploaded } = await r.json();
+    bar.style.width = '100%';
+    uploaded.forEach(f => {
+      currentFiles.push({ path: f.path, fileType: f.fileType, isNew: true });
+      if (!primaryFile) primaryFile = f.path;
+    });
+    renderFileList();
+    toast(`📁 ${uploaded.length} file(s) uploaded`, 'success');
+  } catch (e) {
+    toast('Upload error: ' + e.message, 'error');
+  } finally {
+    setTimeout(() => { prog.style.display = 'none'; bar.style.width = '0'; }, 600);
+    document.getElementById('fileInput').value = '';
+  }
+}
+
+function renderFileList() {
+  const list  = document.getElementById('fileList');
+  const total = currentFiles.length;
+  if (total === 0) { list.innerHTML = ''; return; }
+  list.innerHTML = currentFiles.map((f, i) => {
+    const isPrimary = f.path === primaryFile;
+    const filename  = f.path.split('/').pop();
+    const isPdf     = f.path.endsWith('.pdf');
+    const thumbHtml = isPdf
+      ? `<div class="fi-pdf">PDF</div>`
+      : `<img class="fi-thumb" src="${f.path}" alt="" onerror="this.style.display='none'"/>`;
+    const pageLabel = total > 1 ? `<span style="font-size:.7rem;color:var(--muted);margin-left:4px">Page ${i+1}</span>` : '';
+    return `
+      <div class="file-item" id="fi-${i}">
+        ${thumbHtml}
+        <div class="fi-info">
+          <div class="fi-name">${escHtml(filename)}${pageLabel}</div>
+          <div class="fi-path">${escHtml(f.path)}</div>
+        </div>
+        ${isPrimary
+          ? '<span class="fi-primary">✓ Primary</span>'
+          : `<button type="button" class="fi-set-primary" onclick="setPrimary(${i})">Set Primary</button>`}
+        <button type="button" class="fi-view-btn" onclick="previewNotes('${f.path}','${escHtml(filename)}')" title="Preview notes">${isPdf ? '🔗 Open' : '👁 View'}</button>
+        <div class="fi-reorder">
+          <button type="button" onclick="moveFile(${i},-1)" ${i===0?'disabled':''} title="Move up">▲</button>
+          <button type="button" onclick="moveFile(${i},1)"  ${i===total-1?'disabled':''} title="Move down">▼</button>
+        </div>
+        <button type="button" class="fi-remove" onclick="removeFile(${i})" title="Remove">✕</button>
+      </div>
+    `;
+  }).join('');
+}
+
+function previewNotes(path, name) {
+  const isPdf = path.endsWith('.pdf');
+  if (isPdf) { window.open(path, '_blank'); return; }
+  const overlay = document.getElementById('notesPreviewOverlay');
+  document.getElementById('notesPreviewImg').src  = path;
+  document.getElementById('notesPreviewLabel').textContent = name;
+  overlay.classList.add('open');
+}
+function closeNotesPreview() {
+  document.getElementById('notesPreviewOverlay').classList.remove('open');
+  document.getElementById('notesPreviewImg').src = '';
+}
+
+function moveFile(idx, dir) {
+  const newIdx = idx + dir;
+  if (newIdx < 0 || newIdx >= currentFiles.length) return;
+  const tmp = currentFiles[idx];
+  currentFiles[idx]    = currentFiles[newIdx];
+  currentFiles[newIdx] = tmp;
+  renderFileList();
+}
+
+function setPrimary(idx) {
+  primaryFile = currentFiles[idx].path;
+  renderFileList();
+}
+
+function removeFile(idx) {
+  currentFiles.splice(idx, 1);
+  if (primaryFile && !currentFiles.find(f => f.path === primaryFile)) {
+    primaryFile = currentFiles[0] ? currentFiles[0].path : '';
+  }
+  renderFileList();
+}
+
+// ── MODAL HELPERS ──────────────────────────────────────────────────────────
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close on backdrop click
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) closeModal(overlay.id);
+  });
+});
+
+function resetForm() {
+  document.getElementById('songForm').reset();
+  currentFiles = [];
+  primaryFile  = '';
+  renderFileList();
+}
+
+// ── TOAST ──────────────────────────────────────────────────────────────────
+function toast(msg, type = 'info') {
+  const container = document.getElementById('toast');
+  const el = document.createElement('div');
+  el.className = `toast-item ${type}`;
+  el.textContent = msg;
+  container.appendChild(el);
+  requestAnimationFrame(() => el.classList.add('show'));
+  setTimeout(() => {
+    el.classList.remove('show');
+    setTimeout(() => el.remove(), 400);
+  }, 3500);
+}
+
+// ── LOADING ────────────────────────────────────────────────────────────────
+function showLoading(v) {
+  document.getElementById('loadingOverlay').classList.toggle('show', v);
+}
+
+// ── UTILS ──────────────────────────────────────────────────────────────────
+function escHtml(s) {
+  return String(s || '')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+
+// ── THEME ─────────────────────────────────────────────────────────────────
+function applyTheme() {
+  const dark = localStorage.getItem('adminDark') !== '0'; // default: dark
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  const btn = document.getElementById('darkToggle');
+  if (btn) btn.textContent = dark ? '☀️' : '🌙';
+}
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  localStorage.setItem('adminDark', isDark ? '0' : '1');
+  applyTheme();
+}
+applyTheme(); // run immediately on load
+
+// Keyboard shortcut: Escape closes open modal
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    ['songModal','deleteModal','publishModal','deleteUserModal'].forEach(id => {
+      document.getElementById(id).classList.remove('open');
+    });
+    closeNotesPreview();
+    document.body.style.overflow = '';
+  }
+});
+
+// ══════════════════════════════════════════════════════════════════════════
+//  TAB SWITCHING
+// ══════════════════════════════════════════════════════════════════════════
+function switchAdminTab(tab) {
+  document.getElementById('songsSection').style.display        = tab === 'songs'        ? '' : 'none';
+  document.getElementById('usersSection').style.display        = tab === 'users'        ? '' : 'none';
+  document.getElementById('messagesSection').style.display     = tab === 'messages'     ? '' : 'none';
+  document.getElementById('contributorsSection').style.display = tab === 'contributors' ? '' : 'none';
+  document.getElementById('tabSongs').classList.toggle('active',        tab === 'songs');
+  document.getElementById('tabUsers').classList.toggle('active',        tab === 'users');
+  document.getElementById('tabMessages').classList.toggle('active',     tab === 'messages');
+  document.getElementById('tabContributors').classList.toggle('active', tab === 'contributors');
+  if (tab === 'users')        loadUsers();
+  if (tab === 'messages')     loadMessages();
+  if (tab === 'contributors') loadContributors();
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+//  MESSAGES
+// ══════════════════════════════════════════════════════════════════════════
+let allMessages = [];
+
+async function loadMessages() {
+  try {
+    const r = await fetch('/api/admin/messages');
+    if (!r.ok) throw new Error('Failed');
+    const d = await r.json();
+    allMessages = (d.messages || []).sort((a,b) => new Date(b.receivedAt) - new Date(a.receivedAt));
+    renderMessages();
+  } catch(e) {
+    toast('Could not load messages: ' + e.message, 'error');
+  }
+}
+
+function renderMessages() {
+  const unread = allMessages.filter(m => !m.read).length;
+  document.getElementById('msgTotal').textContent  = allMessages.length;
+  document.getElementById('msgUnread').textContent = unread;
+  const badge = document.getElementById('tabMsgCount');
+  if (unread > 0) { badge.textContent = unread; badge.style.display = ''; badge.style.background = '#c62828'; }
+  else { badge.style.display = 'none'; }
+
+  const list   = document.getElementById('msgList');
+  const noMsg  = document.getElementById('noMessages');
+  if (!allMessages.length) { list.innerHTML = ''; noMsg.style.display = ''; return; }
+  noMsg.style.display = 'none';
+
+  list.innerHTML = allMessages.map(m => `
+    <div class="msg-card${m.read ? '' : ' unread'}" id="msgCard_${m.id}">
+      <div class="msg-card-header">
+        ${!m.read ? '<span class="msg-unread-dot"></span>' : ''}
+        <span class="msg-sender">${escHtml(m.name)}</span>
+        <span class="msg-email">&lt;${escHtml(m.email)}&gt;</span>
+        <span class="msg-date">${new Date(m.receivedAt).toLocaleString()}</span>
+      </div>
+      <div class="msg-body">${escHtml(m.message)}</div>
+      ${m.attachment ? `
+        <div class="msg-attachment">
+          ${!m.attachment.endsWith('.pdf')
+            ? `<img src="/${m.attachment}" alt="${escHtml(m.attachmentName||'attachment')}" onclick="previewNotes('/${m.attachment}','${escHtml(m.attachmentName||'attachment')}')" title="Click to enlarge"/>`
+            : ''}
+          <a href="/${m.attachment}" target="_blank" class="msg-att-link">
+            ${m.attachment.endsWith('.pdf') ? '📄' : '🖼'} ${escHtml(m.attachmentName || 'Attachment')}
+          </a>
+        </div>` : ''}
+      <div class="msg-actions">
+        ${!m.read ? `<button class="btn-msg-read" onclick="markMsgRead('${m.id}')">✓ Mark as read</button>` : '<span style="font-size:.78rem;color:var(--muted)">✓ Read</span>'}
+        <button class="btn-msg-del" onclick="deleteMsg('${m.id}')">🗑 Delete</button>
+        <a href="mailto:${escHtml(m.email)}?subject=Re: Your message on Tamil Keyboard Notes" style="margin-left:auto;font-size:.78rem;color:var(--primary);text-decoration:none;font-weight:600;align-self:center">↩ Reply by email</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+function escHtml(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+async function markMsgRead(id) {
+  try {
+    await fetch('/api/admin/messages/'+id+'/read', { method:'POST' });
+    const m = allMessages.find(m => m.id === id);
+    if (m) m.read = true;
+    renderMessages();
+  } catch(e) { toast('Error: ' + e.message, 'error'); }
+}
+
+async function deleteMsg(id) {
+  if (!confirm('Delete this message?')) return;
+  try {
+    await fetch('/api/admin/messages/'+id, { method:'DELETE' });
+    allMessages = allMessages.filter(m => m.id !== id);
+    renderMessages();
+    toast('Message deleted', 'success');
+  } catch(e) { toast('Error: ' + e.message, 'error'); }
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+//  USER MANAGEMENT
+// ══════════════════════════════════════════════════════════════════════════
+let allUsers = [];
+let deleteUserTargetId = null;
+
+async function loadUsers() {
+  try {
+    const r = await fetch('/api/admin/users');
+    if (!r.ok) throw new Error('Failed to fetch users');
+    const data = await r.json();
+    allUsers = data.users || [];
+    renderUserStats();
+    filterUsers();
+    // Update tab badge
+    document.getElementById('tabUserCount').textContent = allUsers.length;
+  } catch(e) {
+    toast('Could not load users: ' + e.message, 'error');
+  }
+}
+
+function renderUserStats() {
+  const total     = allUsers.length;
+  const active    = allUsers.filter(u => u.active !== false).length;
+  const suspended = total - active;
+  const today     = allUsers.filter(u => {
+    if (!u.createdAt) return false;
+    const d = new Date(u.createdAt);
+    const now = new Date();
+    return d.getFullYear()===now.getFullYear() && d.getMonth()===now.getMonth() && d.getDate()===now.getDate();
+  }).length;
+  document.getElementById('ustatTotal').textContent     = total;
+  document.getElementById('ustatActive').textContent    = active;
+  document.getElementById('ustatSuspended').textContent = suspended;
+  document.getElementById('ustatToday').textContent     = today;
+}
+
+function filterUsers() {
+  const q      = (document.getElementById('userSearchInput').value || '').toLowerCase();
+  const status = document.getElementById('userStatusFilter').value;
+  let filtered = allUsers.filter(u => {
+    const matchSearch = !q ||
+      (u.name  || '').toLowerCase().includes(q) ||
+      (u.email || '').toLowerCase().includes(q);
+    const isActive   = u.active !== false;
+    const matchStatus = !status ||
+      (status === 'active'    &&  isActive) ||
+      (status === 'suspended' && !isActive);
+    return matchSearch && matchStatus;
+  });
+  renderUserTable(filtered);
+  document.getElementById('userResultCount').textContent =
+    filtered.length === allUsers.length
+      ? `${allUsers.length} members`
+      : `${filtered.length} of ${allUsers.length}`;
+}
+
+function renderUserTable(users) {
+  const tbody  = document.getElementById('userTableBody');
+  const noEl   = document.getElementById('noUsers');
+  if (!users.length) {
+    tbody.innerHTML = '';
+    noEl.style.display = 'block';
+    return;
+  }
+  noEl.style.display = 'none';
+  const initials = name => (name || '?').split(' ').map(w => w[0]).join('').toUpperCase().slice(0,2);
+  const fmtDate  = iso => {
+    if (!iso) return '—';
+    const d = new Date(iso);
+    return d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
+  };
+  tbody.innerHTML = users.map(u => {
+    const isActive = u.active !== false;
+    const badge    = isActive
+      ? `<span class="status-badge active">Active</span>`
+      : `<span class="status-badge suspended">Suspended</span>`;
+    const toggleBtn = isActive
+      ? `<button class="btn btn-sm btn-toggle-suspend" onclick="toggleUser('${u.id}', false)" title="Suspend this user">🚫 Suspend</button>`
+      : `<button class="btn btn-sm btn-toggle-active" onclick="toggleUser('${u.id}', true)" title="Restore access">✅ Activate</button>`;
+    return `
+      <tr>
+        <td>
+          <div class="u-name-cell">
+            <div class="u-avatar">${escHtml(initials(u.name))}</div>
+            <div>
+              <div class="u-name">${escHtml(u.name || '—')}</div>
+            </div>
+          </div>
+        </td>
+        <td><span class="u-email">${escHtml(u.email)}</span></td>
+        <td style="white-space:nowrap;font-size:.82rem">${fmtDate(u.createdAt)}</td>
+        <td style="white-space:nowrap;font-size:.82rem">${fmtDate(u.lastLogin)}</td>
+        <td>${badge}</td>
+        <td>
+          <div class="user-actions">
+            ${toggleBtn}
+            <button class="btn btn-sm btn-danger" onclick="openDeleteUser('${u.id}','${escHtml(u.name)}','${escHtml(u.email)}')" title="Delete user">🗑</button>
+          </div>
+        </td>
+      </tr>`;
+  }).join('');
+}
+
+async function toggleUser(id, activate) {
+  try {
+    const r = await fetch(`/api/admin/users/${id}/toggle`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ active: activate })
+    });
+    if (!r.ok) throw new Error('Request failed');
+    toast(activate ? '✅ User activated' : '🚫 User suspended', activate ? 'success' : 'warn');
+    await loadUsers();
+  } catch(e) {
+    toast('Failed to update user: ' + e.message, 'error');
+  }
+}
+
+function openDeleteUser(id, name, email) {
+  deleteUserTargetId = id;
+  document.getElementById('deleteUserName').textContent  = name;
+  document.getElementById('deleteUserEmail').textContent = email;
+  document.getElementById('deleteUserModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+async function confirmDeleteUser() {
+  if (!deleteUserTargetId) return;
+  const btn = document.getElementById('confirmDeleteUserBtn');
+  btn.disabled = true;
+  btn.textContent = 'Deleting…';
+  try {
+    const r = await fetch(`/api/admin/users/${deleteUserTargetId}`, { method: 'DELETE' });
+    if (!r.ok) throw new Error('Delete failed');
+    closeModal('deleteUserModal');
+    toast('🗑 User deleted', 'success');
+    deleteUserTargetId = null;
+    await loadUsers();
+  } catch(e) {
+    toast('Failed to delete user: ' + e.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '🗑 Delete User';
+  }
+}
+
+// Also update the tab song count badge once songs are loaded
+const _origRenderStats = typeof renderStats === 'function' ? renderStats : null;
+if (_origRenderStats) {
+  window.renderStats = function(stats) {
+    _origRenderStats(stats);
+    document.getElementById('tabSongCount').textContent = stats.total || '–';
+  };
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+//  CONTRIBUTORS
+// ══════════════════════════════════════════════════════════════════════════
+
+const AVATAR_COLORS = {
+  special: 'linear-gradient(135deg,#c62828,#e53935)',
+  gold:    'linear-gradient(135deg,#f57f17,#f9a825)',
+  green:   'linear-gradient(135deg,#2e7d32,#43a047)',
+  teal:    'linear-gradient(135deg,#00695c,#00897b)',
+  purple:  'linear-gradient(135deg,#6a1b9a,#8e24aa)',
+  default: 'linear-gradient(135deg,var(--primary),#5c6bc0)'
+};
+
+// Contributors — loaded from API, saved back to API
+let contributors = [];
+
+async function loadContributors() {
+  try {
+    const r = await fetch('/api/contributors');
+    if (!r.ok) throw new Error('Failed to load');
+    contributors = await r.json();
+  } catch (e) {
+    console.error('Could not load contributors:', e);
+    contributors = [];
+  }
+  renderContributors();
+}
+
+async function saveContributorsToApi() {
+  try {
+    const r = await fetch('/api/contributors', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(contributors)
+    });
+    if (!r.ok) throw new Error('Save failed');
+    return true;
+  } catch (e) {
+    toast('❌ Could not save contributors', 'error');
+    return false;
+  }
+}
+
+function renderContributors() {
+  const grid  = document.getElementById('contribGrid');
+  const noEl  = document.getElementById('noContribs');
+  document.getElementById('tabContribCount').textContent = contributors.length;
+  if (!contributors.length) { grid.innerHTML = ''; noEl.style.display = 'block'; return; }
+  noEl.style.display = 'none';
+  grid.innerHTML = contributors.map((c,i) => {
+    const bg = AVATAR_COLORS[c.color] || AVATAR_COLORS.default;
+    const ytBtn = c.youtube
+      ? `<a href="${escHtml(c.youtube)}" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:4px;font-size:.72rem;font-weight:600;
+                  color:var(--primary);background:var(--primary-light);border-radius:20px;padding:3px 10px;
+                  text-decoration:none;margin-top:6px;transition:background .15s"
+           onmouseover="this.style.background='var(--primary)';this.style.color='#fff'"
+           onmouseout="this.style.background='var(--primary-light)';this.style.color='var(--primary)'">
+           ▶ YouTube
+         </a>`
+      : `<span style="font-size:.72rem;color:var(--muted);margin-top:6px;display:inline-block">No YouTube link</span>`;
+    return `
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;
+                  display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;
+                  box-shadow:var(--shadow)">
+        <div style="width:52px;height:52px;border-radius:50%;background:${bg};color:#fff;
+                    display:flex;align-items:center;justify-content:center;font-size:1.3rem;
+                    font-weight:800;margin-bottom:6px;flex-shrink:0">${escHtml(c.initials)}</div>
+        <div style="font-size:.95rem;font-weight:700;color:var(--text)">${escHtml(c.name)}</div>
+        <div style="font-size:.78rem;color:var(--muted);line-height:1.4;margin:4px 0">${escHtml(c.role)}</div>
+        <span style="font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;
+                     background:var(--primary-light);color:var(--primary)">${escHtml(c.badge)}</span>
+        ${ytBtn}
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <button class="btn btn-sm btn-ghost" onclick="openContribModal(${i})">✏️ Edit</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteContributor(${i})">🗑</button>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function openContribModal(idx) {
+  const isEdit = idx !== undefined;
+  document.getElementById('contribModalTitle').textContent = isEdit ? 'Edit Contributor' : 'Add Contributor';
+  const c = isEdit ? contributors[idx] : {};
+  document.getElementById('contribEditId').value    = isEdit ? idx : '';
+  document.getElementById('contribInitials').value  = c.initials || '';
+  document.getElementById('contribColor').value     = c.color    || 'default';
+  document.getElementById('contribName').value      = c.name     || '';
+  document.getElementById('contribRole').value      = c.role     || '';
+  document.getElementById('contribBadge').value     = c.badge    || '';
+  document.getElementById('contribYoutube').value   = c.youtube  || '';
+  document.getElementById('contribModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeContribModal() {
+  document.getElementById('contribModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+async function saveContributor() {
+  const name = document.getElementById('contribName').value.trim();
+  const role = document.getElementById('contribRole').value.trim();
+  if (!name || !role) { toast('Name and description are required', 'error'); return; }
+  const entry = {
+    id:       name.toLowerCase().replace(/\s+/g,'_').slice(0,12) + '_' + Date.now(),
+    initials: document.getElementById('contribInitials').value.trim() || name.slice(0,2).toUpperCase(),
+    color:    document.getElementById('contribColor').value,
+    name, role,
+    badge:   document.getElementById('contribBadge').value.trim(),
+    youtube: document.getElementById('contribYoutube').value.trim()
+  };
+  const editIdx = document.getElementById('contribEditId').value;
+  if (editIdx !== '') {
+    contributors[parseInt(editIdx)] = entry;
+  } else {
+    contributors.push(entry);
+  }
+  closeContribModal();
+  const ok = await saveContributorsToApi();
+  if (ok) toast(editIdx !== '' ? '✅ Contributor updated & saved' : '✅ Contributor added & saved', 'success');
+  renderContributors();
+}
+
+async function deleteContributor(idx) {
+  if (!confirm(`Remove "${contributors[idx].name}" from contributors?`)) return;
+  contributors.splice(idx, 1);
+  const ok = await saveContributorsToApi();
+  if (ok) toast('🗑 Contributor removed & saved', 'success');
+  renderContributors();
+}
+</script>
+</body>
+</html>
